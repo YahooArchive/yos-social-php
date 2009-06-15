@@ -1,0 +1,22 @@
+Yahoo! OS PHP SDK
+=============
+After downloading and unpackaging the release, copy the contents of yosdk/lib 
+to a directory that is accessible via the PHP require/require_once methods. In 
+your PHP scripts, require the Yahoo.inc file:
+
+    require("Yahoo.inc");
+
+or
+
+    require_once("Yahoo.inc");
+
+Now you should be ready to instantiate your YahooSession object and get
+started.
+
+Sample Application
+==================
+In the yosdk/sample directory you'll find sampleapp.php, a sample application 
+that will get you started. Put the file in your hosting directory and fill 
+in the consumer key, consumer key secret and application ID. When you're done, 
+point your browser at the URL. You will be directed to verify access to the 
+application and then you will be redirected back to your application.
