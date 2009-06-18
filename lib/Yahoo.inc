@@ -285,10 +285,11 @@ class YahooSession {
      * Executes the given YQL query.
      *
      * @param $yql The query to execute.
+	 * @param $env A URL to a YQL environment file.
      * @return The response or NULL if the request fails..
      */
-    function query($yql) {
-        return $this->application->query($yql);
+    function query($yql, $env=NULL) {
+        return $this->application->query($yql, $env);
     }
 	
     /**
@@ -734,9 +735,10 @@ class YahooApplication {
      * Executes the given YQL query.
      *
      * @param $yql The query to execute.
+	 * @param $env A URL to a YQL environment file.
      * @return The response or NULL if the request fails..
      */
-    function query($yql) 
+    function query($yql, $env=NULL) 
 	{
         global $YahooConfig;
 		
@@ -745,9 +747,13 @@ class YahooApplication {
 		$request_url = sprintf("http://%s/v1/yql",$YahooConfig["QUERY_WS_HOSTNAME"]);
 		$params = array('q' => $yql, 'format' => 'json');
 		
-        $response = $this->client->get($request_url, $params, 30);
+		if(!is_null($env)) {
+			$params['env'] = $env;
+		}
+		
+        $response = $client->get($request_url, $params, 30);
 
-        if(YahooUtil::is_response_error()) {
+        if(YahooUtil::is_response_error($response)) {
             return NULL;
         }
 

@@ -35,7 +35,7 @@
 
 <tr><td class="memItemLeft" nowrap align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classYahooSession.html#666aa94b4442e4c12f78fdc9f9060d7a">getUser</a> ($guid)</td></tr>
 
-<tr><td class="memItemLeft" nowrap align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classYahooSession.html#0c8ada338fb4fa4e280213d7caa75b58">query</a> ($yql)</td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classYahooSession.html#f45488c087b13cd4a5437b674c1021f3">query</a> ($yql, $env=NULL)</td></tr>
 
 <tr><td class="memItemLeft" nowrap align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classYahooSession.html#a0ba86381b9b0cde07a13bb5993d8ed3">clearSession</a> ($sessionStore=NULL)</td></tr>
 
@@ -254,7 +254,7 @@ Checks to see if there is a session in this PHP page request. Doesn't cause any 
 
 </div>
 </div><p>
-<a class="anchor" name="0c8ada338fb4fa4e280213d7caa75b58"></a><!-- doxytag: member="YahooSession::query" ref="0c8ada338fb4fa4e280213d7caa75b58" args="($yql)" -->
+<a class="anchor" name="f45488c087b13cd4a5437b674c1021f3"></a><!-- doxytag: member="YahooSession::query" ref="f45488c087b13cd4a5437b674c1021f3" args="($yql, $env=NULL)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -262,9 +262,18 @@ Checks to see if there is a session in this PHP page request. Doesn't cause any 
           <td class="memname">YahooSession::query           </td>
           <td>(</td>
           <td class="paramtype">$&nbsp;</td>
-          <td class="paramname"> <em>yql</em>          </td>
-          <td>&nbsp;)&nbsp;</td>
+          <td class="paramname"> <em>yql</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">$&nbsp;</td>
+          <td class="paramname"> <em>env</em> = <code>NULL</code></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
         </tr>
       </table>
 </div>
@@ -275,6 +284,7 @@ Executes the given YQL query.<p>
 <dl compact><dt><b>Parameters:</b></dt><dd>
   <table border="0" cellspacing="2" cellpadding="0">
     <tr><td valign="top"></td><td valign="top"><em>$yql</em>&nbsp;</td><td>The query to execute. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>$env</em>&nbsp;</td><td>A URL to a YQL environment file. </td></tr>
   </table>
 </dl>
 <dl class="return" compact><dt><b>Returns:</b></dt><dd>The response or NULL if the request fails.. </dd></dl>
@@ -349,7 +359,7 @@ Requires that there be a session in this PHP page request. Generates a redirect 
 <hr>The documentation for this class was generated from the following file:<ul>
 <li>lib/Yahoo.inc</ul>
 </div>
-<hr size="1"><address style="text-align: right;"><small>Generated on Fri Jun 12 11:42:06 2009 for Yahoo! OS SDK - PHP by&nbsp;
+<hr size="1"><address style="text-align: right;"><small>Generated on Thu Jun 18 14:55:31 2009 for Yahoo! OS SDK - PHP by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img src="doxygen.png" alt="doxygen" align="middle" border="0"></a> 1.5.8 </small></address>
 </body>
