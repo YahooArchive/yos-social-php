@@ -924,7 +924,7 @@ class YahooUser {
             return NULL;
         }
 
-        $source = sprintf("APP.%s", $applicationId);
+        $source = sprintf("APP.%s", $appid);
 		
 		$update = array(
 			"collectionID" => $this->guid,
