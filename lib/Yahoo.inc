@@ -924,7 +924,7 @@ class YahooUser {
             return NULL;
         }
 
-        $source = sprintf("APP.%s", $applicationId);
+        $source = sprintf("APP.%s", $appid);
 		
 		$update = array(
 			"collectionID" => $this->guid,
@@ -940,7 +940,7 @@ class YahooUser {
 		);
 		
 		$update_body = array("updates" => array($update));
-		$update_body_json = json_encode($body);
+		$update_body_json = json_encode($update_body);
 		
 		$request_url = sprintf("http://%s/v1/user/%s/updates/%s/%s",
                     	$YahooConfig["UPDATES_WS_HOSTNAME"], $this->guid, $source, urlencode($suid));
@@ -978,7 +978,7 @@ class YahooUser {
             return FALSE;
         }
 
-        $source = sprintf("APP.%s", $applicationId);
+        $source = sprintf("APP.%s", $appid);
 
 		$request_url = sprintf("http://%s/v1/user/%s/updates/%s/%s", 
 						$YahooConfig["UPDATES_WS_HOSTNAME"], $this->guid, $source, urlencode($suid));
