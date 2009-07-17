@@ -1481,7 +1481,6 @@ class NativeSessionStore {
      *
      * @param $token A PHP stdclass object containing the components of
      *               the OAuth request token.
-     * @return True on success, false otherwise.
      */
     function storeRequestToken($token) {
 				$_SESSION['yosdk_rt'] = json_encode($token);
@@ -1499,7 +1498,6 @@ class NativeSessionStore {
     /**
      * Clears the request token from the session store.
      *
-     * @return True on success, false otherwise.
      */
     function clearRequestToken() {
 				unset($_SESSION['yosdk_rt']);
@@ -1510,7 +1508,6 @@ class NativeSessionStore {
      *
      * @param $token A PHP stdclass object containing the components of
      *               the OAuth access token.
-     * @return True on success, false otherwise.
      */
     function storeAccessToken($token) {
 				$_SESSION['yosdk_at'] = json_encode($token);
@@ -1528,7 +1525,6 @@ class NativeSessionStore {
     /**
      * Clears the access token from the session store.
      *
-     * @return True on success, false otherwise.
      */
     function clearAccessToken() {
 				unset($_SESSION['yosdk_at']);
