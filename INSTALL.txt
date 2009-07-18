@@ -1,5 +1,7 @@
+=================
 Yahoo! OS PHP SDK
-=============
+=================
+
 After downloading and unpackaging the release, copy the contents of yosdk/lib
 to a directory that is accessible via the PHP require/require_once methods. In
 your PHP scripts, require the Yahoo.inc file:
@@ -46,8 +48,8 @@ YahooLogger::setDebugDestination('LOG');
 Storing OAuth credentials on filesystem, memcache, cookies
 ==========================================================
 
-By default OAuth credential (request + access tokens) are stored in PHP sessions.
-PHP sessions can easily be configured to work from local filesystem, database, or
+By default, OAuth credentials (request + access tokens) are stored in PHP sessions.
+PHP sessions can easily be configured to work from a local filesystem, a database, or
 a memcache instance. The sample apps provide working examples of filesystem storage
 and memcache storage.
 
@@ -58,9 +60,9 @@ Filesystem Session Storage (default)
 // Include the YOS library.
 require dirname(__FILE__).'/../lib/Yahoo.inc';
 
-// use memcache to store oauth credentials via php native sessions
-ini_set('session.save_handler', 'memcache');
-session_save_path('tcp://localhost:11211?persistent=1&weight=1&timeout=1&retry_interval=15');
+// use local filesystem to store oauth credentials via php native sessions
+ini_set('session.save_handler', 'files');
+session_save_path('/tmp/');
 session_start();
 
 ========================

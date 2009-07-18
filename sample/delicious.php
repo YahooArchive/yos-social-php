@@ -24,9 +24,10 @@ session_start();
 // Make sure you obtain application keys before continuing by visiting:
 // https://developer.yahoo.com/dashboard/createKey.html
 
-$consumerKey = '###';
-$consumerKeySecret = '###';
-$applicationId = '###';
+// create a Yahoo! Open Application - http://developer.yahoo.com/dashboard
+$consumerKey = 'dj0yJmk9WUxPUkhFUWxISWpvJmQ9WVdrOWFYWmhTVzVDTXpBbWNHbzlNVGt4TmpJNU1EazROdy0tJnM9Y29uc3VtZXJzZWNyZXQmeD01Ng--';
+$consumerKeySecret = 'f893cf549be5cb37f83b1414e2ff212df2ea4c18';
+$applicationId = 'ivaInB30';
 
 // oauth dance if not authenticated
 $session = YahooSession::requireSession($consumerKey, $consumerKeySecret, $applicationId);
@@ -42,7 +43,7 @@ $content
 if(is_object($user))
 {
   // load y! profile data
-  $profile = $user->loadProfile();
+  $profile = $user->getProfile();
 
   // get yap app instance for yql / small view
   $application = new YahooApplication($consumerKey, $consumerKeySecret);
