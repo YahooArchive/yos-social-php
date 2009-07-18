@@ -17,14 +17,9 @@ session_start();
 // Make sure you obtain application keys before continuing by visiting:
 // https://developer.yahoo.com/dashboard/createKey.html
 
-// Your consumer key goes here.
-define("CONSUMER_KEY","###");
-
-// Your consumer key secret goes here.
-define("CONSUMER_SECRET","###");
-
-// Your application ID goes here.
-define("APP_ID","###");
+define("CONSUMER_KEY", "dj0yJmk9WUxPUkhFUWxISWpvJmQ9WVdrOWFYWmhTVzVDTXpBbWNHbzlNVGt4TmpJNU1EazROdy0tJnM9Y29uc3VtZXJzZWNyZXQmeD01Ng--");
+define("CONSUMER_SECRET", "f893cf549be5cb37f83b1414e2ff212df2ea4c18");
+define("APP_ID", "ivaInB30");
 
 if(array_key_exists("logout", $_GET)) {
 	// if a session exists and the logout flag is detected
@@ -95,19 +90,16 @@ function close_popup() {
 			if($hasSession == FALSE) {
 				// if a session does not exist, output the
 				// login / share button linked to the auth_url.
-				echo sprintf("<a href=\"%s\" id=\"yloginLink\"><img src=\"http://l.yimg.com/a/i/ydn/social/updt-spurp.png\"></a>\n",
-						$auth_url);
+				echo sprintf("<a href=\"%s\" id=\"yloginLink\"><img src=\"http://l.yimg.com/a/i/ydn/social/updt-spurp.png\"></a>\n", $auth_url);
 			}
 			else if($hasSession && $profile) {
 				// if a session does exist and the profile data was
 				// fetched without error, print out a simple usercard.
-				echo sprintf("<img src=\"%s\"/><p><h2>Hi <a href=\"%s\" target=\"_blank\">%s!</a></h2></p>\n",
-						$profile->image->imageUrl, $profile->profileUrl, $profile->nickname);
+				echo sprintf("<img src=\"%s\"/><p><h2>Hi <a href=\"%s\" target=\"_blank\">%s!</a></h2></p>\n", $profile->image->imageUrl, $profile->profileUrl, $profile->nickname);
 
 				if($profile->status->message != "") {
 					$statusDate = date('F j, y, g:i a', strtotime($profile->status->lastStatusModified));
-					echo sprintf("<p><strong>&#8220;</strong>%s<strong>&#8221;</strong> on %s</p>",
-							$profile->status->message, $statusDate);
+					echo sprintf("<p><strong>&#8220;</strong>%s<strong>&#8221;</strong> on %s</p>", $profile->status->message, $statusDate);
 				}
 
 				echo "<p><a href=\"?logout\">Logout</a></p>";
