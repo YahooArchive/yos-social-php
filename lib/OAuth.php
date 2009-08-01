@@ -740,8 +740,8 @@ class SimpleOAuthDataStore extends OAuthDataStore {
 
   function new_token($consumer, $type="request") {
     $key = md5(time());
-    $secret = time() + time();
-    $token = new OAuthToken($key, md5(md5($secret)));
+    $secret = mt_rand();
+    $token = new OAuthToken($key, md5($secret));
     if (!dba_insert("${type}_$key", serialize($token), $this->dbh)) {
       trigger_error("doooom!", E_USER_WARNING);
       return NULL;
