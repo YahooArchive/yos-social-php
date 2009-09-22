@@ -79,12 +79,12 @@ The YOS SDK provides some methods that make debugging easier. Also, since the YO
 SDK was designed for the greatest compatibility across PHP version, it is advised
 to suppress notices if using PHP 5.x:
 
-   // debug settings
-   error_reporting(E_ALL | E_NOTICE); # do not show notices as library is php4 compatable
-   ini_set('display_errors', true);
+    // debug settings
+    error_reporting(E_ALL | E_NOTICE); # do not show notices as library is php4 compatable
+    ini_set('display_errors', true);
 
-   YahooLogger::setDebug(true);
-   YahooLogger::setDebugDestination('LOG');
+    YahooLogger::setDebug(true);
+    YahooLogger::setDebugDestination('LOG');
 
 By default, OAuth credentials (request + access tokens) are stored in PHP sessions.
 PHP sessions can easily be configured to work from a local filesystem, a database, or
@@ -93,33 +93,33 @@ and memcache storage.
 
 ## Filesystem Session Storage (default)
 
-   // use local filesystem to store oauth credentials via php native sessions
-   ini_set('session.save_handler', 'files');
-   session_save_path('/tmp/');
-   session_start();
+    // use local filesystem to store oauth credentials via php native sessions
+    ini_set('session.save_handler', 'files');
+    session_save_path('/tmp/');
+    session_start();
 
 ## Memcache Session Storage
 
-   // use memcache to store oauth credentials via php native sessions
-   ini_set('session.save_handler', 'memcache');
-   session_save_path('tcp://localhost:11211?persistent=1&weight=1&timeout=1&retry_interval=15');
-   session_start();
+    // use memcache to store oauth credentials via php native sessions
+    ini_set('session.save_handler', 'memcache');
+    session_save_path('tcp://localhost:11211?persistent=1&weight=1&timeout=1&retry_interval=15');
+    session_start();
 
 ## Cookie Based Session Storage (original)
 
 The original default storage backend was based on storing access tokens in a plain text cookie. This is bad for security, and the default has since been changed (breaks backwards compatibility). In order to use the original
 session store, you must instantiate 'CookieSessionStore' and pass into all methods of YahooSession:
 
-   $sessionStore = new CookieSessionStore();
+    $sessionStore = new CookieSessionStore();
 
-   YahooSession::hasSession($consumerKey, $consumerSecret, $applicationId, $sessionStore, $verifier)
-   YahooSession::requireSession($consumerKey, $consumerSecret, $applicationId, $callback, $sessionStore, $verifier)
-   YahooSession::initSession($consumerKey, $consumerSecret, $applicationId, $redirect, $callback, $sessionStore, $verifier)
+    YahooSession::hasSession($consumerKey, $consumerSecret, $applicationId, $sessionStore, $verifier)
+    YahooSession::requireSession($consumerKey, $consumerSecret, $applicationId, $callback, $sessionStore, $verifier)
+    YahooSession::initSession($consumerKey, $consumerSecret, $applicationId, $redirect, $callback, $sessionStore, $verifier)
 
-   YahooSession::createAuthorizationUrl($consumerKey, $consumerSecret, $callback, $sessionStore)
-   YahooSession::redirectForAuthorization($consumerKey, $consumerSecret, $callback, $sessionStore)
-   YahooSession::clearSession($sessionStore)
-   YahooSession::checkSession($sessionType, $sessionStore)
+    YahooSession::createAuthorizationUrl($consumerKey, $consumerSecret, $callback, $sessionStore)
+    YahooSession::redirectForAuthorization($consumerKey, $consumerSecret, $callback, $sessionStore)
+    YahooSession::clearSession($sessionStore)
+    YahooSession::checkSession($sessionType, $sessionStore)
 
 
 Examples
@@ -136,16 +136,16 @@ application that shows how to use YQL to make web service request.
 
 ## Fetching YQL:
 
-   $user = YahooSession::requireSession($consumerKey, $consumerKeySecret, $applicationId)->getSessionedUser();
+    $user = YahooSession::requireSession($consumerKey, $consumerKeySecret, $applicationId)->getSessionedUser();
 
-   var_dump($user->query('select * from social.connections where owner_guid=me'));
+    var_dump($user->query('select * from social.connections where owner_guid=me'));
 
 
 ## Fetching Social Data:
 
-   $user = YahooSession::requireSession($consumerKey, $consumerKeySecret, $applicationId)->getSessionedUser();
+    $user = YahooSession::requireSession($consumerKey, $consumerKeySecret, $applicationId)->getSessionedUser();
 
-   var_dump($user->getProfile());
+    var_dump($user->getProfile());
 
 
 Tests
