@@ -77,6 +77,8 @@ $GLOBAL_YAHOO_SESSION = NULL;
 $GLOBAL_YAHOO_LOGGER_DEBUG = false;
 $GLOBAL_YAHOO_LOGGER_DEBUG_DESTINATION = "LOG";
 
+global $YahooConfig, $GLOBAL_YAHOO_SESSION, $GLOBAL_YAHOO_LOGGER_DEBUG, $GLOBAL_YAHOO_LOGGER_DEBUG_DESTINATION;
+
 class YahooUtil {
 	function current_url() {
 		return sprintf("http://%s%s",$_SERVER["HTTP_HOST"],$_SERVER["REQUEST_URI"]);
@@ -1790,7 +1792,7 @@ class OAuthClient {
             'responseHeaders' => $headerParser->headers,
             'responseBody' => $response
             );
-        if($response["code"] != 200) {
+        if($response["code"] >= 200 && $response["code"] < 300) {
             YahooLogger::error("HTTP request failed", $response);
 
             $this->checkExpired($response["code"], $headerParser);
