@@ -134,18 +134,39 @@ application and then you will be redirected back to your application.
 In the yosdk/sample directory you'll find delicious.php, a sample yahoo open
 application that shows how to use YQL to make web service request.
 
+Make sure to update the OAuth credentials in each bundled example:
+
+    define('OAUTH_CONSUMER_KEY', '###');
+    define('OAUTH_CONSUMER_SECRET', '###');
+    define('OAUTH_DOMAIN', '###');
+    define('OAUTH_APP_ID', '###');
+
+
 ## Fetching YQL:
 
-    $user = YahooSession::requireSession($consumerKey, $consumerKeySecret, $applicationId)->getSessionedUser();
+    $session = YahooSession::requireSession(OAUTH_CONSUMER_KEY, OAUTH_CONSUMER_SECRET, OAUTH_APP_ID);
+    $user = $session->getSessionedUser();
 
-    var_dump($user->query('select * from social.connections where owner_guid=me'));
+    var_dump($session->query('select * from social.connections where owner_guid=me'));
 
 
 ## Fetching Social Data:
 
-    $user = YahooSession::requireSession($consumerKey, $consumerKeySecret, $applicationId)->getSessionedUser();
+    $session = YahooSession::requireSession(OAUTH_CONSUMER_KEY, OAUTH_CONSUMER_SECRET, OAUTH_APP_ID);
+    $user = $session->getSessionedUser();
 
     var_dump($user->getProfile());
+    var_dump($user->getContacts());
+
+
+## Setting YAP Small View:
+
+    $session = YahooSession::requireSession(OAUTH_CONSUMER_KEY, OAUTH_CONSUMER_SECRET, OAUTH_APP_ID);
+    $user = $session->getSessionedUser();
+
+    $content = '<h1><yml:name> customized small view</h1>';
+    var_dump($user->setSmallView($content));
+
 
 
 Tests

@@ -17,9 +17,10 @@ session_start();
 // Make sure you obtain application keys before continuing by visiting:
 // https://developer.yahoo.com/dashboard/createKey.html
 
-define("CONSUMER_KEY", "dj0yJmk9WUxPUkhFUWxISWpvJmQ9WVdrOWFYWmhTVzVDTXpBbWNHbzlNVGt4TmpJNU1EazROdy0tJnM9Y29uc3VtZXJzZWNyZXQmeD01Ng--");
-define("CONSUMER_SECRET", "f893cf549be5cb37f83b1414e2ff212df2ea4c18");
-define("APP_ID", "ivaInB30");
+define('OAUTH_CONSUMER_KEY', '###');
+define('OAUTH_CONSUMER_SECRET', '###');
+define('OAUTH_DOMAIN', '###');
+define('OAUTH_APP_ID', '###');
 
 if(array_key_exists("logout", $_GET)) {
 	// if a session exists and the logout flag is detected
@@ -31,7 +32,7 @@ if(array_key_exists("logout", $_GET)) {
 // check for the existance of a session.
 // this will determine if we need to show a pop-up and fetch the auth url,
 // or fetch the user's social data.
-$hasSession = YahooSession::hasSession(CONSUMER_KEY, CONSUMER_SECRET, APP_ID);
+$hasSession = YahooSession::hasSession(OAUTH_CONSUMER_KEY, OAUTH_CONSUMER_SECRET, OAUTH_APP_ID);
 
 if($hasSession == FALSE) {
 	// create the callback url,
@@ -39,11 +40,11 @@ if($hasSession == FALSE) {
 
 	// pass the credentials to get an auth url.
 	// this URL will be used for the pop-up.
-	$auth_url = YahooSession::createAuthorizationUrl(CONSUMER_KEY, CONSUMER_SECRET, $callback);
+	$auth_url = YahooSession::createAuthorizationUrl(OAUTH_CONSUMER_KEY, OAUTH_CONSUMER_SECRET, $callback);
 }
 else {
 	// pass the credentials to initiate a session
-	$session = YahooSession::requireSession(CONSUMER_KEY, CONSUMER_SECRET, APP_ID);
+	$session = YahooSession::requireSession(OAUTH_CONSUMER_KEY, OAUTH_CONSUMER_SECRET, OAUTH_APP_ID);
 
 	// if the in_popup flag is detected,
 	// the pop-up has loaded the callback_url and we can close this window.

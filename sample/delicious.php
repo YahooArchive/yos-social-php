@@ -25,28 +25,31 @@ session_start();
 // https://developer.yahoo.com/dashboard/createKey.html
 
 // create a Yahoo! Open Application - http://developer.yahoo.com/dashboard
-$consumerKey = 'dj0yJmk9WUxPUkhFUWxISWpvJmQ9WVdrOWFYWmhTVzVDTXpBbWNHbzlNVGt4TmpJNU1EazROdy0tJnM9Y29uc3VtZXJzZWNyZXQmeD01Ng--';
-$consumerKeySecret = 'f893cf549be5cb37f83b1414e2ff212df2ea4c18';
-$applicationId = 'ivaInB30';
+
+define('OAUTH_CONSUMER_KEY', '###');
+define('OAUTH_CONSUMER_SECRET', '###');
+define('OAUTH_DOMAIN', '###');
+define('OAUTH_APP_ID', '###');
+
 
 // oauth dance if not authenticated
-$session = YahooSession::requireSession($consumerKey, $consumerKeySecret, $applicationId);
-
-// get oauthed user guid + profile
-$user = $session->getSessionedUser();
+$session = YahooSession::requireSession(OAUTH_CONSUMER_KEY, OAUTH_CONSUMER_SECRET, OAUTH_APP_ID);
 
 $header   = '<h2><img src="http://delicious.com/favicon.ico" title="Delicious" width="16" height="16" />Delicious // social bookmarking</h2>';
 $content
 = '<div id="bookmarks">';
 
 // if user is logged in and oauth is valid
-if(is_object($user))
+if(is_object($session))
 {
+  // get oauthed user guid + profile
+  $user = $session->getSessionedUser();
+
   // load y! profile data
   $profile = $user->getProfile();
 
   // get yap app instance for yql / small view
-  $application = new YahooApplication($consumerKey, $consumerKeySecret);
+  $application = new YahooApplication(OAUTH_CONSUMER_KEY, OAUTH_CONSUMER_SECRET);
 
   // delicious yql
   $yql = "use 'http://www.javarants.com/delicious/delicious.feeds.xml' as delicious.feeds;";
