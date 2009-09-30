@@ -469,6 +469,11 @@ class OAuthRequest {
         $out[$key] = $value;
       }
     }
+
+    if(!isset($out['Content-Type'])) {
+      $out['Content-Type'] = @$_SERVER['CONTENT_TYPE'];
+    }
+
     return $out;
   }
 }
