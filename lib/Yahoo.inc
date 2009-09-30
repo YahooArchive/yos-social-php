@@ -1524,7 +1524,7 @@ class NativeSessionStore {
      * @return The request token.
      */
     function fetchRequestToken() {
-        return json_decode($_SESSION["yosdk_rt"]);
+        return isset($_SESSION["yosdk_rt"]) ? json_decode($_SESSION["yosdk_rt"]) : false;
     }
 
     /**
@@ -1550,7 +1550,7 @@ class NativeSessionStore {
      * @return The access token.
      */
     function fetchAccessToken() {
-        return json_decode($_SESSION["yosdk_at"]);
+        return isset($_SESSION["yosdk_at"]) ? json_decode($_SESSION["yosdk_at"]) : false;
     }
 
     /**
@@ -1792,7 +1792,8 @@ class OAuthClient {
             'responseHeaders' => $headerParser->headers,
             'responseBody' => $response
             );
-        if($response["code"] >= 200 && $response["code"] < 300) {
+
+        if($response["code"] <= 200 && $response["code"] > 300) {
             YahooLogger::error("HTTP request failed", $response);
 
             $this->checkExpired($response["code"], $headerParser);
