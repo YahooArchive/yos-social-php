@@ -1793,7 +1793,8 @@ class OAuthClient {
             'responseBody' => $response
             );
 
-        if($response["code"] <= 200 && $response["code"] > 300) {
+
+				if(($response["code"] > 200) && ($response["code"] < 300)) {
             YahooLogger::error("HTTP request failed", $response);
 
             $this->checkExpired($response["code"], $headerParser);
