@@ -8,39 +8,39 @@
  *  @example     http://developer.yahoo.com/social/sdk/php/
  *
  *  @copyright   Copyright (c) 2009 Yahoo! Inc. All rights reserved.
- *  @license
+ *  @license     BSD License (http://www.opensource.org/licenses/bsd-license.php)
  *
  *  The copyrights embodied in the content of this file are licensed under the
  *  BSD (revised) open source license.
  *
- *	Redistribution and use of this software in source and binary forms, with
- *	or without modification, are permitted provided that the following
- *	conditions are met:
+ *  Redistribution and use of this software in source and binary forms, with
+ *  or without modification, are permitted provided that the following
+ *  conditions are met:
  *
- *	* Redistributions of source code must retain the above
- *	  copyright notice, this list of conditions and the
- *	  following disclaimer.
+ *  * Redistributions of source code must retain the above
+ *    copyright notice, this list of conditions and the
+ *    following disclaimer.
  *
- *	* Redistributions in binary form must reproduce the above
- *	  copyright notice, this list of conditions and the
- *	  following disclaimer in the documentation and/or other
- *	  materials provided with the distribution.
+ *  * Redistributions in binary form must reproduce the above
+ *    copyright notice, this list of conditions and the
+ *    following disclaimer in the documentation and/or other
+ *    materials provided with the distribution.
  *
- *	* Neither the name of Yahoo! Inc. nor the names of its
- *	  contributors may be used to endorse or promote products
- *	  derived from this software without specific prior
- *	  written permission of Yahoo! Inc.
+ *  * Neither the name of Yahoo! Inc. nor the names of its
+ *    contributors may be used to endorse or promote products
+ *    derived from this software without specific prior
+ *    written permission of Yahoo! Inc.
  *
- *	THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
- *	AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
- *	IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
- *	DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE
- *	FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
- *	DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
- *	SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
- *	CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
- *	OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
- *	OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+ *  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+ *  AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+ *  IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
+ *  DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE
+ *  FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+ *  DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
+ *  SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
+ *  CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
+ *  OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+ *  OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  *
  *  Please see the Yahoo! Developer Network forums for support: http://developer.yahoo.net/forum/
  *
@@ -80,9 +80,9 @@ $GLOBAL_YAHOO_LOGGER_DEBUG_DESTINATION = "LOG";
 global $YahooConfig, $GLOBAL_YAHOO_SESSION, $GLOBAL_YAHOO_LOGGER_DEBUG, $GLOBAL_YAHOO_LOGGER_DEBUG_DESTINATION;
 
 class YahooUtil {
-	function current_url() {
-		return sprintf("http://%s%s",$_SERVER["HTTP_HOST"],$_SERVER["REQUEST_URI"]);
-	}
+  function current_url() {
+    return sprintf("http://%s%s",$_SERVER["HTTP_HOST"],$_SERVER["REQUEST_URI"]);
+  }
 
     function verify_signature($consumer, $token=NULL, $oauth_signature) {
         $oauth_signature_method = new OAuthSignatureMethod_HMAC_SHA1();
@@ -95,14 +95,14 @@ class YahooUtil {
         return $ok;
     }
 
-	function is_yap_canvas() {
-		return (isset($_POST['yap_appid'])
-			&& isset($_POST['yap_view']));
-	}
+  function is_yap_canvas() {
+    return (isset($_POST['yap_appid'])
+      && isset($_POST['yap_view']));
+  }
 
-	function is_response_error($response) {
-		return (is_null($response) || $response["code"] != 200);
-	}
+  function is_response_error($response) {
+    return (is_null($response) || $response["code"] != 200);
+  }
 
 }
 
@@ -263,7 +263,7 @@ class YahooSession {
         $this->client = new OAuthClient($consumer, $accessToken);
 
         $this->application = new YahooApplication($consumer->key, $consumer->secret);
-				$this->application->token = $this->accessToken;
+        $this->application->token = $this->accessToken;
     }
 
     /**
@@ -322,11 +322,11 @@ class YahooSession {
         return new YahooUser($this, $guid, isset($this->guid) && ($guid == $this->guid));
     }
 
-	/**
+  /**
      * Executes the given YQL query.
      *
      * @param $yql The query to execute.
-	 * @param $env A URL to a YQL environment file.
+   * @param $env A URL to a YQL environment file.
      * @return The response or NULL if the request fails..
      */
     function query($yql, $env=NULL) {
@@ -344,7 +344,7 @@ class YahooSession {
             exit();
         }
         else {
-			// TODO: throw a YahooException
+      // TODO: throw a YahooException
             YahooLogger::error("Failed to create authorization URLs");
         }
     }
@@ -391,7 +391,7 @@ class YahooSession {
             $sessionStore = new NativeSessionStore();
         }
 
-		if(is_null($verifier) && array_key_exists("oauth_verifier", $_GET)) {
+    if(is_null($verifier) && array_key_exists("oauth_verifier", $_GET)) {
             $verifier = $_GET["oauth_verifier"];
         }
 
@@ -424,7 +424,7 @@ class YahooSession {
      *                      be established.
      */
     function requireSession($consumerKey, $consumerSecret, $applicationId = NULL,
-	                        $callback = NULL, $sessionStore = NULL, $verifier = NULL)
+                          $callback = NULL, $sessionStore = NULL, $verifier = NULL)
     {
         if(is_null($sessionStore)) {
             $sessionStore = new NativeSessionStore();
@@ -492,32 +492,32 @@ class YahooSession {
         }
     }
 
-	function initSessionFromYAP($consumerKey, $consumerSecret, $appid)
-	{
-		global $GLOBAL_YAHOO_SESSION;
+  function initSessionFromYAP($consumerKey, $consumerSecret, $appid)
+  {
+    global $GLOBAL_YAHOO_SESSION;
 
-		if(!YahooUtil::is_yap_canvas()) {
-			// TODO: throw a YahooException
-			return NULL;
-		}
+    if(!YahooUtil::is_yap_canvas()) {
+      // TODO: throw a YahooException
+      return NULL;
+    }
 
-		$consumer = new stdclass();
+    $consumer = new stdclass();
         $consumer->key = $consumerKey;
         $consumer->secret = $consumerSecret;
 
-		if ($consumer->key != $_POST["yap_consumer_key"]) {
+    if ($consumer->key != $_POST["yap_consumer_key"]) {
             error_log("Consumer key from YAP does not match provided key.");
-			// TODO: throw a YahooException
+      // TODO: throw a YahooException
             $GLOBAL_YAHOO_SESSION = NULL;
             return;
         }
 
-		$signature_ok = YahooUtil::verify_signature($consumer, null, $_REQUEST['oauth_signature']);
+    $signature_ok = YahooUtil::verify_signature($consumer, null, $_REQUEST['oauth_signature']);
 
         if (!$signature_ok)
         {
             error_log("Signature from YAP failed.");
-			// TODO: throw a YahooException
+      // TODO: throw a YahooException
             $GLOBAL_YAHOO_SESSION = NULL;
             return;
         }
@@ -535,7 +535,7 @@ class YahooSession {
         $GLOBAL_YAHOO_SESSION = new YahooSession($consumer, $accessToken, $applicationId);
 
         return $GLOBAL_YAHOO_SESSION;
-	}
+  }
 
     /**
      * @private
@@ -563,7 +563,7 @@ class YahooSession {
             else {
                 // Don't redirect the user, just inform the caller that
                 // no session is present.
-				// TODO: throw a YahooException
+        // TODO: throw a YahooException
                 $GLOBAL_YAHOO_SESSION = NULL;
             }
         }
@@ -605,7 +605,7 @@ class YahooSession {
                 // though there's no session present.
                 $sessionStore->clearRequestToken();
 
-				// TODO: throw a YahooException
+        // TODO: throw a YahooException
                 $GLOBAL_YAHOO_SESSION = NULL;
             }
 
@@ -621,7 +621,7 @@ class YahooSession {
                 $GLOBAL_YAHOO_SESSION = new YahooSession($consumer, $accessToken, $applicationId);
             }
             else if($redirect)
-						{
+            {
                 // TODO: Add redirect counter so this doesn't happen over and over and over when Yahoo! is completely busted.
                 // The fetch for the access token failed. Generate a new
                 // request token and try again.
@@ -629,14 +629,14 @@ class YahooSession {
                 YahooSession::redirectForAuthorization($consumerKey, $consumerSecret, $callback, $sessionStore);
             }
             else
-						{
+            {
                 // Don't redirect the user, just inform the caller that
                 // no session is present.
                 $sessionStore->clearRequestToken();
                 $GLOBAL_YAHOO_SESSION = NULL;
             }
         }
-				else if($type == YAHOO_YAP_SESSION_TYPE)
+        else if($type == YAHOO_YAP_SESSION_TYPE)
         {
             // Found a YAP session.
             $GLOBAL_YAHOO_SESSION = YahooSession::initSessionFromYAP($consumerKey, $consumerSecret, $applicationId);
@@ -644,7 +644,7 @@ class YahooSession {
         else
         {
             trigger_error("Unknown session type found", E_USER_ERROR);
-			// TODO: throw a YahooException
+      // TODO: throw a YahooException
             $GLOBAL_YAHOO_SESSION = NULL;
         }
 
@@ -655,7 +655,7 @@ class YahooSession {
      * @private
      */
     function accessTokenExpired($accessToken, $consumer, $applicationId, $sessionStore)
-		{
+    {
         global $GLOBAL_YAHOO_SESSION;
 
         $now = time();
@@ -679,7 +679,7 @@ class YahooSession {
                     $consumer, $newAccessToken, $applicationId);
         }
         else
-				{
+        {
             // The access token is expired and we don't have
             // a sufficient access session handle to renew
             // the access token. Clear the cookie and redirect
@@ -739,10 +739,10 @@ class YahooApplication {
      */
     var $client = NULL;
 
-	/**
-	 * @private
-	 */
-	var $token = NULL;
+  /**
+   * @private
+   */
+  var $token = NULL;
 
     /**
      * Constructs a new YahooApplication object.
@@ -764,7 +764,7 @@ class YahooApplication {
     function setSmallView($guid, $content) {
         global $YahooConfig;
 
-		$client = new OAuthClient($this->consumer, NULL);
+    $client = new OAuthClient($this->consumer, NULL);
 
         $request_url = sprintf("http://%s/v1/cache/view/small/%s", $YahooConfig["YAP_WS_HOSTNAME"], urlencode($guid));
         $response = $client->put($request_url, "text/html;charset=utf-8", $content);
@@ -776,21 +776,21 @@ class YahooApplication {
      * Executes the given YQL query.
      *
      * @param $yql The query to execute.
-	   * @param $env A URL to a YQL environment file.
+     * @param $env A URL to a YQL environment file.
      * @return The response or NULL if the request fails..
      */
     function query($yql, $env=NULL)
-		{
+    {
         global $YahooConfig;
 
-				$client = new OAuthClient($this->consumer, $this->token);
+        $client = new OAuthClient($this->consumer, $this->token);
 
-				$request_url = sprintf("http://%s/v1/yql",$YahooConfig["QUERY_WS_HOSTNAME"]);
-				$params = array('q' => $yql, 'format' => 'json', 'env' => 'http://datatables.org/alltables.env');
+        $request_url = sprintf("http://%s/v1/yql",$YahooConfig["QUERY_WS_HOSTNAME"]);
+        $params = array('q' => $yql, 'format' => 'json', 'env' => 'http://datatables.org/alltables.env');
 
-				if(!is_null($env)) {
-					$params['env'] = $env;
-				}
+        if(!is_null($env)) {
+          $params['env'] = $env;
+        }
 
         $response = $client->get($request_url, $params, 30);
 
@@ -840,7 +840,7 @@ class YahooUser {
         $this->sessioned = $sessioned;
     }
 
-		/**
+    /**
      * Gets the user's status message.
      *
      * @return The status of the user or NULL if the fetch fails.
@@ -848,8 +848,8 @@ class YahooUser {
     function getStatus() {
         global $YahooConfig;
 
-				$request_url = sprintf("http://%s/v1/user/%s/profile/status",
-				$YahooConfig["SOCIAL_WS_HOSTNAME"],urlencode($this->guid));
+        $request_url = sprintf("http://%s/v1/user/%s/profile/status",
+        $YahooConfig["SOCIAL_WS_HOSTNAME"],urlencode($this->guid));
 
         $response = $this->client->get($request_url);
 
@@ -861,7 +861,7 @@ class YahooUser {
 
             $status = new stdclass();
             $status->message = "";
-						$status->lastStatusModified = NULL;
+            $status->lastStatusModified = NULL;
             $status->uri = NULL;
             return $status;
         }
@@ -874,7 +874,7 @@ class YahooUser {
         }
     }
 
-		/**
+    /**
      * Sets the user's status message.
      *
      * @param $message The new status message for the user.
@@ -888,11 +888,11 @@ class YahooUser {
             return NULL;
         }
 
-				$message = array("message" => $message);
+        $message = array("message" => $message);
         $status = array("status" => $message);
-				$status_json = json_encode($status);
+        $status_json = json_encode($status);
 
-				$request_url = sprintf("http://%s/v1/user/%s/profile/status", $YahooConfig["SOCIAL_WS_HOSTNAME"], $this->guid);
+        $request_url = sprintf("http://%s/v1/user/%s/profile/status", $YahooConfig["SOCIAL_WS_HOSTNAME"], $this->guid);
 
         $response = $this->client->put($request_url, "application/json", $status_json);
 
@@ -913,7 +913,7 @@ class YahooUser {
      */
     function getUpdates($start = 0, $count = 10) {
         $parameters = array("start" => $start, "count" => $count, "transform" => '(sort "pubDate" numeric descending (all))');
-				$updates = $this->get_resource("updates", $parameters);
+        $updates = $this->get_resource("updates", $parameters);
 
         return $updates->updates;
     }
@@ -927,7 +927,7 @@ class YahooUser {
      */
     function getConnectionUpdates($start = 0, $count = 10) {
         $parameters = array("start" => $start, "count" => $count, "transform" => '(sort "pubDate" numeric descending (all))');
-				$updates = $this->get_resource("updates/connections", $parameters);
+        $updates = $this->get_resource("updates/connections", $parameters);
 
         return $updates->updates;
     }
@@ -957,7 +957,7 @@ class YahooUser {
         }
 
         // Make sure an application ID was given.
-				$appid = $this->session->getApplicationId();
+        $appid = $this->session->getApplicationId();
         if(empty($appid)) {
             YahooLogger::error("No application ID given, can't insert update");
             return NULL;
@@ -965,23 +965,23 @@ class YahooUser {
 
         $source = sprintf("APP.%s", $appid);
 
-				$update = array(
-					"collectionID" => $this->guid,
-					"collectionType" => "guid",
-					"class" => "app",
-					"source" => $source,
-					"type" => 'appActivity',
-					"suid" => $suid,
-					"title" => $title,
-					"description" => $description,
-					"link" => $link,
-					"pubDate" => (string)$date
-				);
+        $update = array(
+          "collectionID" => $this->guid,
+          "collectionType" => "guid",
+          "class" => "app",
+          "source" => $source,
+          "type" => 'appActivity',
+          "suid" => $suid,
+          "title" => $title,
+          "description" => $description,
+          "link" => $link,
+          "pubDate" => (string)$date
+        );
 
-				$update_body = array("updates" => array($update));
-				$update_body_json = json_encode($update_body);
+        $update_body = array("updates" => array($update));
+        $update_body_json = json_encode($update_body);
 
-				$request_url = sprintf("http://%s/v1/user/%s/updates/%s/%s", $YahooConfig["UPDATES_WS_HOSTNAME"], $this->guid, $source, urlencode($suid));
+        $request_url = sprintf("http://%s/v1/user/%s/updates/%s/%s", $YahooConfig["UPDATES_WS_HOSTNAME"], $this->guid, $source, urlencode($suid));
 
         $response = $this->client->put($request_url, "application/json", $update_body_json);
 
@@ -1010,7 +1010,7 @@ class YahooUser {
         }
 
         // Make sure an application ID was given.
-				$appid = $this->session->getApplicationId();
+        $appid = $this->session->getApplicationId();
         if( empty($appid) ) {
             YahooLogger::error("No application ID given, can't delete update");
             return FALSE;
@@ -1018,7 +1018,7 @@ class YahooUser {
 
         $source = sprintf("APP.%s", $appid);
 
-				$request_url = sprintf("http://%s/v1/user/%s/updates/%s/%s", $YahooConfig["UPDATES_WS_HOSTNAME"], $this->guid, $source, urlencode($suid));
+        $request_url = sprintf("http://%s/v1/user/%s/updates/%s/%s", $YahooConfig["UPDATES_WS_HOSTNAME"], $this->guid, $source, urlencode($suid));
 
         $response = $this->client->delete($request_url);
 
@@ -1037,7 +1037,7 @@ class YahooUser {
     function getProfile() {
         global $YahooConfig;
 
-				$profile = $this->get_resource("profile");
+        $profile = $this->get_resource("profile");
 
         return $profile->profile;
     }
@@ -1053,8 +1053,8 @@ class YahooUser {
     function getConnections(&$start, &$count, &$total) {
         global $YahooConfig;
 
-				$parameters = array("view" => "usercard", "start" => $start, "count" => $count);
-				$connections = $this->get_resource("connections",$parameters);
+        $parameters = array("view" => "usercard", "start" => $start, "count" => $count);
+        $connections = $this->get_resource("connections",$parameters);
 
         $start = $connections->connections->start;
         $count = $connections->connections->count;
@@ -1078,8 +1078,8 @@ class YahooUser {
             return NULL;
         }
 
-				$parameters = array("view" => "tinyusercard", "start" => $start, "count" => $count);
-				$contacts = $this->get_resource("contacts",$parameters);
+        $parameters = array("view" => "tinyusercard", "start" => $start, "count" => $count);
+        $contacts = $this->get_resource("contacts",$parameters);
 
         return $contacts;
     }
@@ -1094,45 +1094,45 @@ class YahooUser {
         return $this->session->application->setSmallView($this->guid, $content);
     }
 
-	/**
-	 * @private
-	 */
-	function get_resource($resource, $parameters=array())
-	{
-		global $YahooConfig;
+  /**
+   * @private
+   */
+  function get_resource($resource, $parameters=array())
+  {
+    global $YahooConfig;
 
-		$request_url = sprintf("http://%s/v1/user/%s/%s",
-		$YahooConfig["SOCIAL_WS_HOSTNAME"], urlencode($this->guid), $resource);
+    $request_url = sprintf("http://%s/v1/user/%s/%s",
+    $YahooConfig["SOCIAL_WS_HOSTNAME"], urlencode($this->guid), $resource);
 
-		$response = $this->client->get($request_url,$parameters);
+    $response = $this->client->get($request_url,$parameters);
 
-		if(YahooUtil::is_response_error($response)) {
-			return NULL;
-		}
+    if(YahooUtil::is_response_error($response)) {
+      return NULL;
+    }
 
-		$data = json_decode($response["responseBody"]);
+    $data = json_decode($response["responseBody"]);
 
-		return $data;
-	}
+    return $data;
+  }
 
-	///////////////////////////////////////////////////////////////////////////
-	// Deprecated methods
-	///////////////////////////////////////////////////////////////////////////
+  ///////////////////////////////////////////////////////////////////////////
+  // Deprecated methods
+  ///////////////////////////////////////////////////////////////////////////
 
-		/**
+    /**
      * Loads the extended profile of the current user.
      * @deprecated As of 1.2, replaced by getProfile.
      * @return The extended profile of the current user.
      */
     function loadProfile() {
 
-		// method renamed, keeping for compatibility.
-		YahooLogger::info("loadProfile is deprecated since 1.2: Please use getProfile");
+    // method renamed, keeping for compatibility.
+    YahooLogger::info("loadProfile is deprecated since 1.2: Please use getProfile");
 
-		return $this->getProfile();
-	}
+    return $this->getProfile();
+  }
 
-		/**
+    /**
      * Lists the updates for the current user.
      * @deprecated As of 1.2, replaced by getUpdates.
      *
@@ -1141,15 +1141,15 @@ class YahooUser {
      * @param $count The number of updates to request. (default = 10)
      * @return A list of updates for the current user.
      */
-	function listUpdates($start = 0, $count = 10) {
+  function listUpdates($start = 0, $count = 10) {
 
-		// method renamed, keeping for compatibility.
-		YahooLogger::info("listUpdates is deprecated since 1.2: Please use getUpdates");
+    // method renamed, keeping for compatibility.
+    YahooLogger::info("listUpdates is deprecated since 1.2: Please use getUpdates");
 
-		return $this->getUpdates($start, $count);
-	}
+    return $this->getUpdates($start, $count);
+  }
 
-		/**
+    /**
      * Gets the updates for the connections of the current user.
      * @deprecated As of 1.2, replaced by getConnectionUpdates.
      * @param $start The starting offset to list updates from.
@@ -1157,11 +1157,11 @@ class YahooUser {
      * @return An array of updates for the connections of the current user.
      */
     function listConnectionUpdates($start = 0, $count = 10) {
-		// method renamed, keeping for compatibility.
-		YahooLogger::info("listConnectionUpdates is deprecated since 1.2: Please use getConnectionUpdates");
+    // method renamed, keeping for compatibility.
+    YahooLogger::info("listConnectionUpdates is deprecated since 1.2: Please use getConnectionUpdates");
 
-		return $this->getConnectionUpdates($start, $count);
-	}
+    return $this->getConnectionUpdates($start, $count);
+  }
 
     /**
      * Gets the presence of the user, including the status.
@@ -1172,10 +1172,10 @@ class YahooUser {
     function getPresence() {
         global $YahooConfig;
 
-				YahooLogger::info("getPresence is deprecated since 1.2: Please use getStatus.");
+        YahooLogger::info("getPresence is deprecated since 1.2: Please use getStatus.");
 
-				$request_url = sprintf("http://%s/v1/user/%s/presence/presence",
-				$YahooConfig["PRESENCE_WS_HOSTNAME"],urlencode($this->guid));
+        $request_url = sprintf("http://%s/v1/user/%s/presence/presence",
+        $YahooConfig["PRESENCE_WS_HOSTNAME"],urlencode($this->guid));
 
         $response = $this->client->get($request_url);
 
@@ -1208,7 +1208,7 @@ class YahooUser {
     function setPresence($status) {
         global $YahooConfig;
 
-				YahooLogger::info("setPresence is deprecated since 1.2: Please use setStatus");
+        YahooLogger::info("setPresence is deprecated since 1.2: Please use setStatus");
 
         if(!$this->sessioned) {
             YahooLogger::error("Can't set the presence of an unsessioned user");
@@ -1216,9 +1216,9 @@ class YahooUser {
         }
 
         $presence = array("status" => $status);
-				$presence_json = json_encode($presence);
+        $presence_json = json_encode($presence);
 
-				$request_url = sprintf("http://%s/v1/user/%s/presence/presence", $YahooConfig["PRESENCE_WS_HOSTNAME"], $this->guid);
+        $request_url = sprintf("http://%s/v1/user/%s/presence/presence", $YahooConfig["PRESENCE_WS_HOSTNAME"], $this->guid);
 
         $response = $this->client->put($request_url, "application/json", $presence_json);
 
@@ -1230,9 +1230,9 @@ class YahooUser {
         return $presence;
     }
 
-	///////////////////////////////////////////////////////////////////////////
-	// End Deprecated methods
-	///////////////////////////////////////////////////////////////////////////
+  ///////////////////////////////////////////////////////////////////////////
+  // End Deprecated methods
+  ///////////////////////////////////////////////////////////////////////////
 }
 
 /**
@@ -1250,7 +1250,7 @@ class YahooAuthorization {
         $client = new OAuthClient($consumer, NULL, OAUTH_PARAMS_IN_POST_BODY, OAUTH_SIGNATURE_HMAC_SHA1);
 
         $request_url = sprintf("https://%s/oauth/v2/get_request_token", $YahooConfig["OAUTH_HOSTNAME"]);
-				$parameters = array("oauth_callback" => $callback);
+        $parameters = array("oauth_callback" => $callback);
 
         $response = $client->post($request_url, "application/x-www-form-urlencoded", $parameters);
 
@@ -1515,7 +1515,7 @@ class NativeSessionStore {
      * @param $token A PHP stdclass object containing the components of the OAuth request token.
      */
     function storeRequestToken($token) {
-				$_SESSION['yosdk_rt'] = json_encode($token);
+        $_SESSION['yosdk_rt'] = json_encode($token);
     }
 
     /**
@@ -1532,7 +1532,7 @@ class NativeSessionStore {
      *
      */
     function clearRequestToken() {
-				unset($_SESSION['yosdk_rt']);
+        unset($_SESSION['yosdk_rt']);
     }
 
     /**
@@ -1541,7 +1541,7 @@ class NativeSessionStore {
      * @param $token A PHP stdclass object containing the components of the OAuth access token.
      */
     function storeAccessToken($token) {
-				$_SESSION['yosdk_at'] = json_encode($token);
+        $_SESSION['yosdk_at'] = json_encode($token);
     }
 
     /**
@@ -1558,7 +1558,7 @@ class NativeSessionStore {
      *
      */
     function clearAccessToken() {
-				unset($_SESSION['yosdk_at']);
+        unset($_SESSION['yosdk_at']);
     }
 }
 
@@ -1593,9 +1593,9 @@ class OAuthClient {
      */
     var $signatureMethod = NULL;
 
-		/**
-		 * @private
-		 */
+    /**
+     * @private
+     */
     var $accepts = "application/json";
 
     /**
@@ -1794,7 +1794,7 @@ class OAuthClient {
             );
 
 
-				if(($response["code"] > 200) && ($response["code"] < 300)) {
+        if(($response["code"] > 200) && ($response["code"] < 300)) {
             YahooLogger::error("HTTP request failed", $response);
 
             $this->checkExpired($response["code"], $headerParser);

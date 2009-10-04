@@ -1,6 +1,10 @@
 <?php
 
 /**
+ *
+ * @package OAuth
+ * @license MIT License (http://www.opensource.org/licenses/mit-license.php)
+ *
  * The MIT License
  *
  * Copyright (c) 2007 Andy Smith
@@ -935,14 +939,14 @@ class OAuthUtil {
   }
 
   static function urlencode_rfc3986($input) {
-  	if (is_array($input)) {
-  		return array_map(array('OAuthUtil','urlencode_rfc3986'), $input);
-  	} else if (is_scalar($input)) {
-  		return str_replace('+', ' ',
-  	                       str_replace('%7E', '~', rawurlencode($input)));
-  	} else {
-  		return '';
-  	}
+    if (is_array($input)) {
+      return array_map(array('OAuthUtil','urlencode_rfc3986'), $input);
+    } else if (is_scalar($input)) {
+      return str_replace('+', ' ',
+                           str_replace('%7E', '~', rawurlencode($input)));
+    } else {
+      return '';
+    }
   }
 
   // This decode function isn't taking into consideration the above

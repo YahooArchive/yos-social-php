@@ -51,7 +51,7 @@
  * @author      Brett Stimmerman <brettstimmerman[at]gmail[dot]com>
  * @copyright   2005 Michal Migurski
  * @version     CVS: $Id: JSON.php,v 1.3 2008/09/18 20:54:57 rckenned Exp $
- * @license     http://www.opensource.org/licenses/bsd-license.php
+ * @license     BSD License (http://www.opensource.org/licenses/bsd-license.php)
  * @link        http://pear.php.net/pepr/pepr-proposal-show.php?id=198
  */
 
