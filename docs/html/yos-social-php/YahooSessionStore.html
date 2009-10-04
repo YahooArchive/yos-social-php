@@ -3,16 +3,16 @@
   <html xmlns="http://www.w3.org/1999/xhtml">
 		<head>
 			<!-- template designed by Marco Von Ballmoos -->
-			<title>Docs For Class NativeSessionStore</title>
+			<title>Docs For Class YahooSessionStore</title>
 			<link rel="stylesheet" href="../media/stylesheet.css" />
 			<meta http-equiv='Content-Type' content='text/html; charset=iso-8859-1'/>
 		</head>
 		<body>
 			<div class="page-body">			
-<h2 class="class-name"><img src="../media/images/Class_logo.png"
+<h2 class="class-name"><img src="../media/images/Interface_logo.png"
 														alt=" Class"
 														title=" Class"
-														style="vertical-align: middle"> NativeSessionStore</h2>
+														style="vertical-align: middle">Interface YahooSessionStore</h2>
 
 <a name="sec-description"></a>
 <div class="info-box">
@@ -24,10 +24,10 @@
 					</div>
 	<div class="info-box-body">
         		<!-- ========== Info from phpDoc block ========= -->
-<p class="short-description">PHP session based implementation of the session store. session storage used by the Y!OS PHP SDK. implement their own session store implementations and pass them to YahooSession::hasSession, YahooSession::requireSession and YahooSession::clearSession. to YahooSession::hasSession or YahooSession::requireSession, an instance of a NativeSessionStore is used.</p>
-<p class="description"><p>PHP session based implementation of the session store. This is the default session storage used by the Y!OS PHP SDK. Developers are free to implement their own session store implementations and pass them to YahooSession::hasSession, YahooSession::requireSession and YahooSession::clearSession. By default, if no session store is passed to YahooSession::hasSession or YahooSession::requireSession, an instance of a NativeSessionStore is used.</p></p>
+<p class="short-description">The session store interface. own session store implementations and pass them to YahooSession::hasSession, YahooSession::requireSession and YahooSession::clearSession.</p>
+<p class="description"><p>The session store interface. Developers are free to implement their own session store implementations and pass them to YahooSession::hasSession, YahooSession::requireSession and YahooSession::clearSession.</p></p>
 		<p class="notes">
-			Located in <a class="field" href="_Yahoo.inc.html">/Yahoo.inc</a> (line <span class="field"><a href="../__filesource/fsource_yos-php-sdk__Yahoo.inc.html#a1493">1493</a></span>)
+			Located in <a class="field" href="_YahooSessionStore.inc.html">/YahooSessionStore.inc</a> (line <span class="field"><a href="../__filesource/fsource_yos-social-php__YahooSessionStore.inc.html#a60">60</a></span>)
 		</p>
 		
 				
@@ -50,13 +50,13 @@
 			<div class="method-summary">
 																																																																																<div class="method-definition">
 					<img src="../media/images/Method.png" alt=" "/>
-											<span class="method-result">void</span>
+											<span class="method-result">True</span>
 										<a href="#clearAccessToken" title="details" class="method-name">clearAccessToken</a>
 										()
 									</div>
 																<div class="method-definition">
 					<img src="../media/images/Method.png" alt=" "/>
-											<span class="method-result">void</span>
+											<span class="method-result">True</span>
 										<a href="#clearRequestToken" title="details" class="method-name">clearRequestToken</a>
 										()
 									</div>
@@ -86,13 +86,13 @@
 									</div>
 																<div class="method-definition">
 					<img src="../media/images/Method.png" alt=" "/>
-											<span class="method-result">void</span>
+											<span class="method-result">True</span>
 										<a href="#storeAccessToken" title="details" class="method-name">storeAccessToken</a>
 											(<span class="var-type">$token</span>&nbsp;<span class="var-name">$token</span>)
 									</div>
 																<div class="method-definition">
 					<img src="../media/images/Method.png" alt=" "/>
-											<span class="method-result">void</span>
+											<span class="method-result">True</span>
 										<a href="#storeRequestToken" title="details" class="method-name">storeRequestToken</a>
 											(<span class="var-type">$token</span>&nbsp;<span class="var-name">$token</span>)
 									</div>
@@ -112,19 +112,22 @@
 		<div class="info-box-body">
 			<A NAME='method_detail'></A>
 <a name="methodclearAccessToken" id="clearAccessToken"><!-- --></a>
-<div class="evenrow">
+<div class="oddrow">
 	
 	<div class="method-header">
 		<img src="../media/images/Method.png" />
-		<span class="method-title">clearAccessToken</span> (line <span class="line-number"><a href="../__filesource/fsource_yos-php-sdk__Yahoo.inc.html#a1560">1560</a></span>)
+		<span class="method-title">clearAccessToken</span> (line <span class="line-number"><a href="../__filesource/fsource_yos-social-php__YahooSessionStore.inc.html#a119">119</a></span>)
 	</div> 
 	
 	<!-- ========== Info from phpDoc block ========= -->
 <p class="short-description">Clears the access token from the session store.</p>
 <p class="description"><p>Clears the access token from the session store.</p></p>
+	<ul class="tags">
+				<li><span class="field">return:</span> on success, false otherwise.</li>
+			</ul>
 	
 	<div class="method-signature">
-		<span class="method-result">void</span>
+		<span class="method-result">True</span>
 		<span class="method-name">
 			clearAccessToken
 		</span>
@@ -135,19 +138,22 @@
 			
 	</div>
 <a name="methodclearRequestToken" id="clearRequestToken"><!-- --></a>
-<div class="oddrow">
+<div class="evenrow">
 	
 	<div class="method-header">
 		<img src="../media/images/Method.png" />
-		<span class="method-title">clearRequestToken</span> (line <span class="line-number"><a href="../__filesource/fsource_yos-php-sdk__Yahoo.inc.html#a1534">1534</a></span>)
+		<span class="method-title">clearRequestToken</span> (line <span class="line-number"><a href="../__filesource/fsource_yos-social-php__YahooSessionStore.inc.html#a96">96</a></span>)
 	</div> 
 	
 	<!-- ========== Info from phpDoc block ========= -->
 <p class="short-description">Clears the request token from the session store.</p>
 <p class="description"><p>Clears the request token from the session store.</p></p>
+	<ul class="tags">
+				<li><span class="field">return:</span> on success, false otherwise.</li>
+			</ul>
 	
 	<div class="method-signature">
-		<span class="method-result">void</span>
+		<span class="method-result">True</span>
 		<span class="method-name">
 			clearRequestToken
 		</span>
@@ -158,11 +164,11 @@
 			
 	</div>
 <a name="methodfetchAccessToken" id="fetchAccessToken"><!-- --></a>
-<div class="evenrow">
+<div class="oddrow">
 	
 	<div class="method-header">
 		<img src="../media/images/Method.png" />
-		<span class="method-title">fetchAccessToken</span> (line <span class="line-number"><a href="../__filesource/fsource_yos-php-sdk__Yahoo.inc.html#a1552">1552</a></span>)
+		<span class="method-title">fetchAccessToken</span> (line <span class="line-number"><a href="../__filesource/fsource_yos-social-php__YahooSessionStore.inc.html#a112">112</a></span>)
 	</div> 
 	
 	<!-- ========== Info from phpDoc block ========= -->
@@ -184,11 +190,11 @@
 			
 	</div>
 <a name="methodfetchRequestToken" id="fetchRequestToken"><!-- --></a>
-<div class="oddrow">
+<div class="evenrow">
 	
 	<div class="method-header">
 		<img src="../media/images/Method.png" />
-		<span class="method-title">fetchRequestToken</span> (line <span class="line-number"><a href="../__filesource/fsource_yos-php-sdk__Yahoo.inc.html#a1526">1526</a></span>)
+		<span class="method-title">fetchRequestToken</span> (line <span class="line-number"><a href="../__filesource/fsource_yos-social-php__YahooSessionStore.inc.html#a89">89</a></span>)
 	</div> 
 	
 	<!-- ========== Info from phpDoc block ========= -->
@@ -210,11 +216,11 @@
 			
 	</div>
 <a name="methodhasAccessToken" id="hasAccessToken"><!-- --></a>
-<div class="evenrow">
+<div class="oddrow">
 	
 	<div class="method-header">
 		<img src="../media/images/Method.png" />
-		<span class="method-title">hasAccessToken</span> (line <span class="line-number"><a href="../__filesource/fsource_yos-php-sdk__Yahoo.inc.html#a1508">1508</a></span>)
+		<span class="method-title">hasAccessToken</span> (line <span class="line-number"><a href="../__filesource/fsource_yos-social-php__YahooSessionStore.inc.html#a73">73</a></span>)
 	</div> 
 	
 	<!-- ========== Info from phpDoc block ========= -->
@@ -236,11 +242,11 @@
 			
 	</div>
 <a name="methodhasRequestToken" id="hasRequestToken"><!-- --></a>
-<div class="oddrow">
+<div class="evenrow">
 	
 	<div class="method-header">
 		<img src="../media/images/Method.png" />
-		<span class="method-title">hasRequestToken</span> (line <span class="line-number"><a href="../__filesource/fsource_yos-php-sdk__Yahoo.inc.html#a1499">1499</a></span>)
+		<span class="method-title">hasRequestToken</span> (line <span class="line-number"><a href="../__filesource/fsource_yos-social-php__YahooSessionStore.inc.html#a66">66</a></span>)
 	</div> 
 	
 	<!-- ========== Info from phpDoc block ========= -->
@@ -262,19 +268,22 @@
 			
 	</div>
 <a name="methodstoreAccessToken" id="storeAccessToken"><!-- --></a>
-<div class="evenrow">
+<div class="oddrow">
 	
 	<div class="method-header">
 		<img src="../media/images/Method.png" />
-		<span class="method-title">storeAccessToken</span> (line <span class="line-number"><a href="../__filesource/fsource_yos-php-sdk__Yahoo.inc.html#a1543">1543</a></span>)
+		<span class="method-title">storeAccessToken</span> (line <span class="line-number"><a href="../__filesource/fsource_yos-social-php__YahooSessionStore.inc.html#a105">105</a></span>)
 	</div> 
 	
 	<!-- ========== Info from phpDoc block ========= -->
 <p class="short-description">Stores the given access token in the session store.</p>
 <p class="description"><p>Stores the given access token in the session store.</p></p>
+	<ul class="tags">
+				<li><span class="field">return:</span> on success, false otherwise.</li>
+			</ul>
 	
 	<div class="method-signature">
-		<span class="method-result">void</span>
+		<span class="method-result">True</span>
 		<span class="method-name">
 			storeAccessToken
 		</span>
@@ -284,25 +293,28 @@
 			<ul class="parameters">
 					<li>
 				<span class="var-type">$token</span>
-				<span class="var-name">$token</span><span class="var-description">: A PHP stdclass object containing the components of the OAuth access token.</span>			</li>
+				<span class="var-name">$token</span><span class="var-description">: A PHP stdclass object containing the components of               the OAuth access token.</span>			</li>
 				</ul>
 		
 			
 	</div>
 <a name="methodstoreRequestToken" id="storeRequestToken"><!-- --></a>
-<div class="oddrow">
+<div class="evenrow">
 	
 	<div class="method-header">
 		<img src="../media/images/Method.png" />
-		<span class="method-title">storeRequestToken</span> (line <span class="line-number"><a href="../__filesource/fsource_yos-php-sdk__Yahoo.inc.html#a1517">1517</a></span>)
+		<span class="method-title">storeRequestToken</span> (line <span class="line-number"><a href="../__filesource/fsource_yos-social-php__YahooSessionStore.inc.html#a82">82</a></span>)
 	</div> 
 	
 	<!-- ========== Info from phpDoc block ========= -->
 <p class="short-description">Stores the given request token in the session store.</p>
 <p class="description"><p>Stores the given request token in the session store.</p></p>
+	<ul class="tags">
+				<li><span class="field">return:</span> on success, false otherwise.</li>
+			</ul>
 	
 	<div class="method-signature">
-		<span class="method-result">void</span>
+		<span class="method-result">True</span>
 		<span class="method-name">
 			storeRequestToken
 		</span>
@@ -312,7 +324,7 @@
 			<ul class="parameters">
 					<li>
 				<span class="var-type">$token</span>
-				<span class="var-name">$token</span><span class="var-description">: A PHP stdclass object containing the components of the OAuth request token.</span>			</li>
+				<span class="var-name">$token</span><span class="var-description">: A PHP stdclass object containing the components of               the OAuth request token.</span>			</li>
 				</ul>
 		
 			
@@ -323,7 +335,7 @@
 
 	
 	<p class="notes" id="credit">
-		Documentation generated on Sun, 04 Oct 2009 15:31:09 -0700 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.4.3</a>
+		Documentation generated on Sun, 04 Oct 2009 15:38:01 -0700 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.4.3</a>
 	</p>
 	</div></body>
 </html>

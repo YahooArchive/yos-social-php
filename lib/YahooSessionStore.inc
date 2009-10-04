@@ -5,7 +5,7 @@
  *
  *  YahooSessionStore provides an interface for implementing session storage backends.
  *
- *  @package     yos-php-sdk
+ *  @package     yos-social-php
  *  @author      Yahoo! Developer Network
  *  @example     http://developer.yahoo.com/social/sdk/php/
  *

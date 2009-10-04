@@ -3,7 +3,7 @@
 /**
  *  YOS PHP SDK for accessing social and data apis at Yahoo!
  *
- *  @package     yos-php-sdk
+ *  @package     yos-social-php
  *  @author      Yahoo! Developer Network
  *  @example     http://developer.yahoo.com/social/sdk/php/
  *
