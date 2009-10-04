@@ -1,0 +1,391 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+  <html xmlns="http://www.w3.org/1999/xhtml">
+		<head>
+			<!-- template designed by Marco Von Ballmoos -->
+			<title>Docs For Class OAuthUtil</title>
+			<link rel="stylesheet" href="../media/stylesheet.css" />
+			<meta http-equiv='Content-Type' content='text/html; charset=iso-8859-1'/>
+		</head>
+		<body>
+			<div class="page-body">			
+<h2 class="class-name"><img src="../media/images/Class_logo.png"
+														alt=" Class"
+														title=" Class"
+														style="vertical-align: middle"> OAuthUtil</h2>
+
+<a name="sec-description"></a>
+<div class="info-box">
+	<div class="info-box-title">Description</div>
+	<div class="nav-bar">
+					<span class="disabled">Description</span> |
+															<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+						
+					</div>
+	<div class="info-box-body">
+        		<!-- ========== Info from phpDoc block ========= -->
+		<p class="notes">
+			Located in <a class="field" href="_OAuth.php.html">/OAuth.php</a> (line <span class="field"><a href="../__filesource/fsource_OAuth__OAuth.php.html#a773">773</a></span>)
+		</p>
+		
+				
+		<pre></pre>
+	
+			</div>
+</div>
+
+
+
+
+	<a name="sec-method-summary"></a>
+	<div class="info-box">
+		<div class="info-box-title">Method Summary</span></div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+												<span class="disabled">Methods</span> (<a href="#sec-methods">details</a>)
+		</div>
+		<div class="info-box-body">			
+			<div class="method-summary">
+												<div class="method-definition">
+					<img src="../media/images/StaticMethod.png" alt=" "/>
+											static <span class="method-result">void</span>
+										<a href="#build_http_query" title="details" class="method-name">build_http_query</a>
+											(<span class="var-type"></span>&nbsp;<span class="var-name">$params</span>)
+									</div>
+																<div class="method-definition">
+					<img src="../media/images/StaticMethod.png" alt=" "/>
+											static <span class="method-result">void</span>
+										<a href="#get_headers" title="details" class="method-name">get_headers</a>
+										()
+									</div>
+																<div class="method-definition">
+					<img src="../media/images/StaticMethod.png" alt=" "/>
+											static <span class="method-result">void</span>
+										<a href="#oauth_http_build_query" title="details" class="method-name">oauth_http_build_query</a>
+											(<span class="var-type"></span>&nbsp;<span class="var-name">$params</span>)
+									</div>
+																<div class="method-definition">
+					<img src="../media/images/StaticMethod.png" alt=" "/>
+											static <span class="method-result">void</span>
+										<a href="#oauth_parse_string" title="details" class="method-name">oauth_parse_string</a>
+											(<span class="var-type"></span>&nbsp;<span class="var-name">$query_string</span>)
+									</div>
+																<div class="method-definition">
+					<img src="../media/images/StaticMethod.png" alt=" "/>
+											static <span class="method-result">void</span>
+										<a href="#parse_parameters" title="details" class="method-name">parse_parameters</a>
+											(<span class="var-type"></span>&nbsp;<span class="var-name">$input</span>)
+									</div>
+																<div class="method-definition">
+					<img src="../media/images/StaticMethod.png" alt=" "/>
+											static <span class="method-result">void</span>
+										<a href="#split_header" title="details" class="method-name">split_header</a>
+											(<span class="var-type"></span>&nbsp;<span class="var-name">$header</span>, [<span class="var-type"></span>&nbsp;<span class="var-name">$only_allow_oauth_parameters</span> = <span class="var-default">true</span>])
+									</div>
+																<div class="method-definition">
+					<img src="../media/images/StaticMethod.png" alt=" "/>
+											static <span class="method-result">void</span>
+										<a href="#urldecodeRFC3986" title="details" class="method-name">urldecodeRFC3986</a>
+											(<span class="var-type"></span>&nbsp;<span class="var-name">$input</span>)
+									</div>
+																<div class="method-definition">
+					<img src="../media/images/StaticMethod.png" alt=" "/>
+											static <span class="method-result">void</span>
+										<a href="#urldecode_rfc3986" title="details" class="method-name">urldecode_rfc3986</a>
+											(<span class="var-type"></span>&nbsp;<span class="var-name">$string</span>)
+									</div>
+																<div class="method-definition">
+					<img src="../media/images/StaticMethod.png" alt=" "/>
+											static <span class="method-result">void</span>
+										<a href="#urlencodeRFC3986" title="details" class="method-name">urlencodeRFC3986</a>
+											(<span class="var-type"></span>&nbsp;<span class="var-name">$input</span>)
+									</div>
+																<div class="method-definition">
+					<img src="../media/images/StaticMethod.png" alt=" "/>
+											static <span class="method-result">void</span>
+										<a href="#urlencode_rfc3986" title="details" class="method-name">urlencode_rfc3986</a>
+											(<span class="var-type"></span>&nbsp;<span class="var-name">$input</span>)
+									</div>
+																																																																																															</div>
+		</div>
+	</div>		
+
+	
+	<a name="sec-methods"></a>
+	<div class="info-box">
+		<div class="info-box-title">Methods</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+													<a href="#sec-method-summary">Methods</a> (<span class="disabled">details</span>)
+						
+		</div>
+		<div class="info-box-body">
+			<A NAME='method_detail'></A>
+<a name="methodbuild_http_query" id="build_http_query"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../media/images/StaticMethod.png" />
+		<span class="method-title">static build_http_query</span> (line <span class="line-number"><a href="../__filesource/fsource_OAuth__OAuth.php.html#a858">858</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			build_http_query
+		</span>
+					(<span class="var-type"></span>&nbsp;<span class="var-name">$params</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$params</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodget_headers" id="get_headers"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../media/images/StaticMethod.png" />
+		<span class="method-title">static get_headers</span> (line <span class="line-number"><a href="../__filesource/fsource_OAuth__OAuth.php.html#a832">832</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			get_headers
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodoauth_http_build_query" id="oauth_http_build_query"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../media/images/StaticMethod.png" />
+		<span class="method-title">static oauth_http_build_query</span> (line <span class="line-number"><a href="../__filesource/fsource_OAuth__OAuth.php.html#a912">912</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			oauth_http_build_query
+		</span>
+					(<span class="var-type"></span>&nbsp;<span class="var-name">$params</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$params</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodoauth_parse_string" id="oauth_parse_string"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../media/images/StaticMethod.png" />
+		<span class="method-title">static oauth_parse_string</span> (line <span class="line-number"><a href="../__filesource/fsource_OAuth__OAuth.php.html#a888">888</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			oauth_parse_string
+		</span>
+					(<span class="var-type"></span>&nbsp;<span class="var-name">$query_string</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$query_string</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodparse_parameters" id="parse_parameters"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../media/images/StaticMethod.png" />
+		<span class="method-title">static parse_parameters</span> (line <span class="line-number"><a href="../__filesource/fsource_OAuth__OAuth.php.html#a778">778</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			parse_parameters
+		</span>
+					(<span class="var-type"></span>&nbsp;<span class="var-name">$input</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$input</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodsplit_header" id="split_header"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../media/images/StaticMethod.png" />
+		<span class="method-title">static split_header</span> (line <span class="line-number"><a href="../__filesource/fsource_OAuth__OAuth.php.html#a810">810</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			split_header
+		</span>
+					(<span class="var-type"></span>&nbsp;<span class="var-name">$header</span>, [<span class="var-type"></span>&nbsp;<span class="var-name">$only_allow_oauth_parameters</span> = <span class="var-default">true</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$header</span>			</li>
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$only_allow_oauth_parameters</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodurldecodeRFC3986" id="urldecodeRFC3986"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../media/images/StaticMethod.png" />
+		<span class="method-title">static urldecodeRFC3986</span> (line <span class="line-number"><a href="../__filesource/fsource_OAuth__OAuth.php.html#a963">963</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			urldecodeRFC3986
+		</span>
+					(<span class="var-type"></span>&nbsp;<span class="var-name">$input</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$input</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodurldecode_rfc3986" id="urldecode_rfc3986"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../media/images/StaticMethod.png" />
+		<span class="method-title">static urldecode_rfc3986</span> (line <span class="line-number"><a href="../__filesource/fsource_OAuth__OAuth.php.html#a955">955</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			urldecode_rfc3986
+		</span>
+					(<span class="var-type"></span>&nbsp;<span class="var-name">$string</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$string</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodurlencodeRFC3986" id="urlencodeRFC3986"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../media/images/StaticMethod.png" />
+		<span class="method-title">static urlencodeRFC3986</span> (line <span class="line-number"><a href="../__filesource/fsource_OAuth__OAuth.php.html#a959">959</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			urlencodeRFC3986
+		</span>
+					(<span class="var-type"></span>&nbsp;<span class="var-name">$input</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$input</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodurlencode_rfc3986" id="urlencode_rfc3986"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../media/images/StaticMethod.png" />
+		<span class="method-title">static urlencode_rfc3986</span> (line <span class="line-number"><a href="../__filesource/fsource_OAuth__OAuth.php.html#a941">941</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			urlencode_rfc3986
+		</span>
+					(<span class="var-type"></span>&nbsp;<span class="var-name">$input</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$input</span>			</li>
+				</ul>
+		
+			
+	</div>
+						
+		</div>
+	</div>
+
+	
+	<p class="notes" id="credit">
+		Documentation generated on Sun, 04 Oct 2009 15:31:02 -0700 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.4.3</a>
+	</p>
+	</div></body>
+</html>

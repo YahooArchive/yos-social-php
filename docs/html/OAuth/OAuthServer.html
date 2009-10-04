@@ -1,0 +1,631 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+  <html xmlns="http://www.w3.org/1999/xhtml">
+		<head>
+			<!-- template designed by Marco Von Ballmoos -->
+			<title>Docs For Class OAuthServer</title>
+			<link rel="stylesheet" href="../media/stylesheet.css" />
+			<meta http-equiv='Content-Type' content='text/html; charset=iso-8859-1'/>
+		</head>
+		<body>
+			<div class="page-body">			
+<h2 class="class-name"><img src="../media/images/Class_logo.png"
+														alt=" Class"
+														title=" Class"
+														style="vertical-align: middle"> OAuthServer</h2>
+
+<a name="sec-description"></a>
+<div class="info-box">
+	<div class="info-box-title">Description</div>
+	<div class="nav-bar">
+					<span class="disabled">Description</span> |
+													<a href="#sec-var-summary">Vars</a> (<a href="#sec-vars">details</a>)
+						|											<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+						
+					</div>
+	<div class="info-box-body">
+        		<!-- ========== Info from phpDoc block ========= -->
+		<p class="notes">
+			Located in <a class="field" href="_OAuth.php.html">/OAuth.php</a> (line <span class="field"><a href="../__filesource/fsource_OAuth__OAuth.php.html#a485">485</a></span>)
+		</p>
+		
+				
+		<pre></pre>
+	
+			</div>
+</div>
+
+
+
+	<a name="sec-var-summary"></a>
+	<div class="info-box">
+		<div class="info-box-title">Variable Summary</span></div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+						<span class="disabled">Vars</span> (<a href="#sec-vars">details</a>)
+							| 
+									<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+							
+								</div>
+		<div class="info-box-body">
+			<div class="var-summary">
+																																																<div class="var-title">
+					<img src="../media/images/Variable.png" alt=" " />
+					<span class="var-type">mixed</span>
+					<a href="#$data_store" title="details" class="var-name">$data_store</a>
+				</div>
+																<div class="var-title">
+					<img src="../media/images/Variable.png" alt=" " />
+					<span class="var-type">mixed</span>
+					<a href="#$signature_methods" title="details" class="var-name">$signature_methods</a>
+				</div>
+																<div class="var-title">
+					<img src="../media/images/Variable.png" alt=" " />
+					<span class="var-type">mixed</span>
+					<a href="#$timestamp_threshold" title="details" class="var-name">$timestamp_threshold</a>
+				</div>
+																<div class="var-title">
+					<img src="../media/images/Variable.png" alt=" " />
+					<span class="var-type">mixed</span>
+					<a href="#$version" title="details" class="var-name">$version</a>
+				</div>
+											</div>
+		</div>
+	</div>
+
+	<a name="sec-method-summary"></a>
+	<div class="info-box">
+		<div class="info-box-title">Method Summary</span></div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+																		<a href="#sec-var-summary">Vars</a> (<a href="#sec-vars">details</a>)
+				 
+				|
+						<span class="disabled">Methods</span> (<a href="#sec-methods">details</a>)
+		</div>
+		<div class="info-box-body">			
+			<div class="method-summary">
+																																																																																																																<div class="method-definition">
+					<img src="../media/images/Constructor.png" alt=" "/>
+											<span class="method-result">OAuthServer</span>
+										<a href="#OAuthServer" title="details" class="method-name">OAuthServer</a>
+											(<span class="var-type"></span>&nbsp;<span class="var-name">$data_store</span>)
+									</div>
+																<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">void</span>
+										<a href="#add_signature_method" title="details" class="method-name">add_signature_method</a>
+											(<span class="var-type"></span>&nbsp;<span class="var-name">$signature_method</span>)
+									</div>
+																<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">void</span>
+										<a href="#check_nonce" title="details" class="method-name">check_nonce</a>
+											(<span class="var-type"></span>&nbsp;<span class="var-name">$consumer</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$token</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$nonce</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$timestamp</span>)
+									</div>
+																<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">void</span>
+										<a href="#check_signature" title="details" class="method-name">check_signature</a>
+											(<span class="var-type"></span>&nbsp;<span class="var-name">&$request</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$consumer</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$token</span>)
+									</div>
+																<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">void</span>
+										<a href="#check_timestamp" title="details" class="method-name">check_timestamp</a>
+											(<span class="var-type"></span>&nbsp;<span class="var-name">$timestamp</span>)
+									</div>
+																<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">void</span>
+										<a href="#fetch_access_token" title="details" class="method-name">fetch_access_token</a>
+											(<span class="var-type"></span>&nbsp;<span class="var-name">&$request</span>)
+									</div>
+																<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">void</span>
+										<a href="#fetch_request_token" title="details" class="method-name">fetch_request_token</a>
+											(<span class="var-type"></span>&nbsp;<span class="var-name">&$request</span>)
+									</div>
+																<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">void</span>
+										<a href="#get_consumer" title="details" class="method-name">get_consumer</a>
+											(<span class="var-type"></span>&nbsp;<span class="var-name">&$request</span>)
+									</div>
+																<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">void</span>
+										<a href="#get_signature_method" title="details" class="method-name">get_signature_method</a>
+											(<span class="var-type"></span>&nbsp;<span class="var-name">&$request</span>)
+									</div>
+																<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">void</span>
+										<a href="#get_token" title="details" class="method-name">get_token</a>
+											(<span class="var-type"></span>&nbsp;<span class="var-name">&$request</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$consumer</span>, [<span class="var-type"></span>&nbsp;<span class="var-name">$token_type</span> = <span class="var-default">&quot;access&quot;</span>])
+									</div>
+																<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">void</span>
+										<a href="#get_version" title="details" class="method-name">get_version</a>
+											(<span class="var-type"></span>&nbsp;<span class="var-name">&$request</span>)
+									</div>
+																<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">void</span>
+										<a href="#verify_request" title="details" class="method-name">verify_request</a>
+											(<span class="var-type"></span>&nbsp;<span class="var-name">&$request</span>)
+									</div>
+											</div>
+		</div>
+	</div>		
+
+	<a name="sec-vars"></a>
+	<div class="info-box">
+		<div class="info-box-title">Variables</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+										<a href="#sec-var-summary">Vars</a> (<span class="disabled">details</span>)
+						
+			
+										| 
+									<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+							
+					</div>
+		<div class="info-box-body">
+			
+<a name="var$data_store" id="$data_store"><!-- --></A>
+<div class="oddrow">
+
+	<div class="var-header">
+		<img src="../media/images/Variable.png" />
+		<span class="var-title">
+			<span class="var-type">mixed</span>
+			<span class="var-name">$data_store</span>
+						(line <span class="line-number"><a href="../__filesource/fsource_OAuth__OAuth.php.html#a490">490</a></span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+		
+		
+
+</div>
+<a name="var$signature_methods" id="$signature_methods"><!-- --></A>
+<div class="evenrow">
+
+	<div class="var-header">
+		<img src="../media/images/Variable.png" />
+		<span class="var-title">
+			<span class="var-type">mixed</span>
+			<span class="var-name">$signature_methods</span>
+			 = <span class="var-default">array()</span>			(line <span class="line-number"><a href="../__filesource/fsource_OAuth__OAuth.php.html#a488">488</a></span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+		
+		
+
+</div>
+<a name="var$timestamp_threshold" id="$timestamp_threshold"><!-- --></A>
+<div class="oddrow">
+
+	<div class="var-header">
+		<img src="../media/images/Variable.png" />
+		<span class="var-title">
+			<span class="var-type">mixed</span>
+			<span class="var-name">$timestamp_threshold</span>
+			 = <span class="var-default"> 300</span>			(line <span class="line-number"><a href="../__filesource/fsource_OAuth__OAuth.php.html#a486">486</a></span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+		
+		
+
+</div>
+<a name="var$version" id="$version"><!-- --></A>
+<div class="evenrow">
+
+	<div class="var-header">
+		<img src="../media/images/Variable.png" />
+		<span class="var-title">
+			<span class="var-type">mixed</span>
+			<span class="var-name">$version</span>
+			 = <span class="var-default"> '1.0'</span>			(line <span class="line-number"><a href="../__filesource/fsource_OAuth__OAuth.php.html#a487">487</a></span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+		
+		
+
+</div>
+						
+		</div>
+	</div>
+	
+	<a name="sec-methods"></a>
+	<div class="info-box">
+		<div class="info-box-title">Methods</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+															<a href="#sec-var-summary">Vars</a> (<a href="#sec-vars">details</a>)
+														<a href="#sec-method-summary">Methods</a> (<span class="disabled">details</span>)
+						
+		</div>
+		<div class="info-box-body">
+			<A NAME='method_detail'></A>
+<a name="methodOAuthServer" id="OAuthServer"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Constructor.png" />
+		<span class="method-title">Constructor OAuthServer</span> (line <span class="line-number"><a href="../__filesource/fsource_OAuth__OAuth.php.html#a492">492</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	<div class="method-signature">
+		<span class="method-result">OAuthServer</span>
+		<span class="method-name">
+			OAuthServer
+		</span>
+					(<span class="var-type"></span>&nbsp;<span class="var-name">$data_store</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$data_store</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodadd_signature_method" id="add_signature_method"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">add_signature_method</span> (line <span class="line-number"><a href="../__filesource/fsource_OAuth__OAuth.php.html#a496">496</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			add_signature_method
+		</span>
+					(<span class="var-type"></span>&nbsp;<span class="var-name">$signature_method</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$signature_method</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodcheck_nonce" id="check_nonce"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">check_nonce</span> (line <span class="line-number"><a href="../__filesource/fsource_OAuth__OAuth.php.html#a664">664</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">check that the nonce is not repeated</p>
+<p class="description"><p>check that the nonce is not repeated</p></p>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			check_nonce
+		</span>
+					(<span class="var-type"></span>&nbsp;<span class="var-name">$consumer</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$token</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$nonce</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$timestamp</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$consumer</span>			</li>
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$token</span>			</li>
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$nonce</span>			</li>
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$timestamp</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodcheck_signature" id="check_signature"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">check_signature</span> (line <span class="line-number"><a href="../__filesource/fsource_OAuth__OAuth.php.html#a625">625</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">all-in-one function to check the signature on a request</p>
+<p class="description"><p>all-in-one function to check the signature on a request should guess the signature method appropriately</p></p>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			check_signature
+		</span>
+					(<span class="var-type"></span>&nbsp;<span class="var-name">&$request</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$consumer</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$token</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">&$request</span>			</li>
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$consumer</span>			</li>
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$token</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodcheck_timestamp" id="check_timestamp"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">check_timestamp</span> (line <span class="line-number"><a href="../__filesource/fsource_OAuth__OAuth.php.html#a652">652</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">check that the timestamp is new enough</p>
+<p class="description"><p>check that the timestamp is new enough</p></p>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			check_timestamp
+		</span>
+					(<span class="var-type"></span>&nbsp;<span class="var-name">$timestamp</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$timestamp</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodfetch_access_token" id="fetch_access_token"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">fetch_access_token</span> (line <span class="line-number"><a href="../__filesource/fsource_OAuth__OAuth.php.html#a526">526</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">process an access_token request</p>
+<p class="description"><p>process an access_token request returns the access token on success</p></p>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			fetch_access_token
+		</span>
+					(<span class="var-type"></span>&nbsp;<span class="var-name">&$request</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">&$request</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodfetch_request_token" id="fetch_request_token"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">fetch_request_token</span> (line <span class="line-number"><a href="../__filesource/fsource_OAuth__OAuth.php.html#a507">507</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">process a request_token request</p>
+<p class="description"><p>process a request_token request returns the request token on success</p></p>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			fetch_request_token
+		</span>
+					(<span class="var-type"></span>&nbsp;<span class="var-name">&$request</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">&$request</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodget_consumer" id="get_consumer"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">get_consumer</span> (line <span class="line-number"><a href="../__filesource/fsource_OAuth__OAuth.php.html#a590">590</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">try to find the consumer for the provided request's consumer key</p>
+<p class="description"><p>try to find the consumer for the provided request's consumer key</p></p>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			get_consumer
+		</span>
+					(<span class="var-type"></span>&nbsp;<span class="var-name">&$request</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">&$request</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodget_signature_method" id="get_signature_method"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">get_signature_method</span> (line <span class="line-number"><a href="../__filesource/fsource_OAuth__OAuth.php.html#a572">572</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">figure out the signature with some defaults</p>
+<p class="description"><p>figure out the signature with some defaults</p></p>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			get_signature_method
+		</span>
+					(<span class="var-type"></span>&nbsp;<span class="var-name">&$request</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">&$request</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodget_token" id="get_token"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">get_token</span> (line <span class="line-number"><a href="../__filesource/fsource_OAuth__OAuth.php.html#a609">609</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">try to find the token for the provided request's token key</p>
+<p class="description"><p>try to find the token for the provided request's token key</p></p>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			get_token
+		</span>
+					(<span class="var-type"></span>&nbsp;<span class="var-name">&$request</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$consumer</span>, [<span class="var-type"></span>&nbsp;<span class="var-name">$token_type</span> = <span class="var-default">&quot;access&quot;</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">&$request</span>			</li>
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$consumer</span>			</li>
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$token_type</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodget_version" id="get_version"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">get_version</span> (line <span class="line-number"><a href="../__filesource/fsource_OAuth__OAuth.php.html#a557">557</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">version 1</p>
+<p class="description"><p>version 1</p></p>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			get_version
+		</span>
+					(<span class="var-type"></span>&nbsp;<span class="var-name">&$request</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">&$request</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodverify_request" id="verify_request"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">verify_request</span> (line <span class="line-number"><a href="../__filesource/fsource_OAuth__OAuth.php.html#a545">545</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">verify an api call, checks all the parameters</p>
+<p class="description"><p>verify an api call, checks all the parameters</p></p>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			verify_request
+		</span>
+					(<span class="var-type"></span>&nbsp;<span class="var-name">&$request</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">&$request</span>			</li>
+				</ul>
+		
+			
+	</div>
+						
+		</div>
+	</div>
+
+	
+	<p class="notes" id="credit">
+		Documentation generated on Sun, 04 Oct 2009 15:31:02 -0700 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.4.3</a>
+	</p>
+	</div></body>
+</html>

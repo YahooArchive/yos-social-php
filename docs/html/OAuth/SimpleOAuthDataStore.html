@@ -1,0 +1,449 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+  <html xmlns="http://www.w3.org/1999/xhtml">
+		<head>
+			<!-- template designed by Marco Von Ballmoos -->
+			<title>Docs For Class SimpleOAuthDataStore</title>
+			<link rel="stylesheet" href="../media/stylesheet.css" />
+			<meta http-equiv='Content-Type' content='text/html; charset=iso-8859-1'/>
+		</head>
+		<body>
+			<div class="page-body">			
+<h2 class="class-name"><img src="../media/images/Class_logo.png"
+														alt=" Class"
+														title=" Class"
+														style="vertical-align: middle"> SimpleOAuthDataStore</h2>
+
+<a name="sec-description"></a>
+<div class="info-box">
+	<div class="info-box-title">Description</div>
+	<div class="nav-bar">
+					<span class="disabled">Description</span> |
+													<a href="#sec-var-summary">Vars</a> (<a href="#sec-vars">details</a>)
+						|											<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+						
+					</div>
+	<div class="info-box-body">
+        		<!-- ========== Info from phpDoc block ========= -->
+		<p class="notes">
+			Located in <a class="field" href="_OAuth.php.html">/OAuth.php</a> (line <span class="field"><a href="../__filesource/fsource_OAuth__OAuth.php.html#a706">706</a></span>)
+		</p>
+		
+				
+		<pre><a href="../OAuth/OAuthDataStore.html">OAuthDataStore</a>
+   |
+   --SimpleOAuthDataStore</pre>
+	
+			</div>
+</div>
+
+
+
+	<a name="sec-var-summary"></a>
+	<div class="info-box">
+		<div class="info-box-title">Variable Summary</span></div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+						<span class="disabled">Vars</span> (<a href="#sec-vars">details</a>)
+							| 
+									<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+							
+								</div>
+		<div class="info-box-body">
+			<div class="var-summary">
+																								<div class="var-title">
+					<img src="../media/images/Variable.png" alt=" " />
+					<span class="var-type">mixed</span>
+					<a href="#$dbh" title="details" class="var-name">$dbh</a>
+				</div>
+											</div>
+		</div>
+	</div>
+
+	<a name="sec-method-summary"></a>
+	<div class="info-box">
+		<div class="info-box-title">Method Summary</span></div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+																		<a href="#sec-var-summary">Vars</a> (<a href="#sec-vars">details</a>)
+				 
+				|
+						<span class="disabled">Methods</span> (<a href="#sec-methods">details</a>)
+		</div>
+		<div class="info-box-body">			
+			<div class="method-summary">
+																																																																																<div class="method-definition">
+					<img src="../media/images/Constructor.png" alt=" "/>
+											<span class="method-result">SimpleOAuthDataStore</span>
+										<a href="#SimpleOAuthDataStore" title="details" class="method-name">SimpleOAuthDataStore</a>
+											([<span class="var-type"></span>&nbsp;<span class="var-name">$path</span> = <span class="var-default">&quot;oauth.gdbm&quot;</span>])
+									</div>
+																<div class="method-definition">
+					<img src="../media/images/Destructor.png" alt=" "/>
+											<span class="method-result">void</span>
+										<a href="#__destruct" title="details" class="method-name">__destruct</a>
+										()
+									</div>
+																<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">void</span>
+										<a href="#lookup_consumer" title="details" class="method-name">lookup_consumer</a>
+											(<span class="var-type"></span>&nbsp;<span class="var-name">$consumer_key</span>)
+									</div>
+																<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">void</span>
+										<a href="#lookup_nonce" title="details" class="method-name">lookup_nonce</a>
+											(<span class="var-type"></span>&nbsp;<span class="var-name">$consumer</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$token</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$nonce</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$timestamp</span>)
+									</div>
+																<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">void</span>
+										<a href="#lookup_token" title="details" class="method-name">lookup_token</a>
+											(<span class="var-type"></span>&nbsp;<span class="var-name">$consumer</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$token_type</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$token</span>)
+									</div>
+																<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">void</span>
+										<a href="#new_access_token" title="details" class="method-name">new_access_token</a>
+											(<span class="var-type"></span>&nbsp;<span class="var-name">$token</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$consumer</span>)
+									</div>
+																<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">void</span>
+										<a href="#new_request_token" title="details" class="method-name">new_request_token</a>
+											(<span class="var-type"></span>&nbsp;<span class="var-name">$consumer</span>)
+									</div>
+																<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">void</span>
+										<a href="#new_token" title="details" class="method-name">new_token</a>
+											(<span class="var-type"></span>&nbsp;<span class="var-name">$consumer</span>, [<span class="var-type"></span>&nbsp;<span class="var-name">$type</span> = <span class="var-default">&quot;request&quot;</span>])
+									</div>
+											</div>
+		</div>
+	</div>		
+
+	<a name="sec-vars"></a>
+	<div class="info-box">
+		<div class="info-box-title">Variables</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+										<a href="#sec-var-summary">Vars</a> (<span class="disabled">details</span>)
+						
+			
+										| 
+									<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+							
+					</div>
+		<div class="info-box-body">
+			
+<a name="var$dbh" id="$dbh"><!-- --></A>
+<div class="evenrow">
+
+	<div class="var-header">
+		<img src="../media/images/Variable.png" />
+		<span class="var-title">
+			<span class="var-type">mixed</span>
+			<span class="var-name">$dbh</span>
+						(line <span class="line-number"><a href="../__filesource/fsource_OAuth__OAuth.php.html#a707">707</a></span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+		
+		
+
+</div>
+						
+		</div>
+	</div>
+	
+	<a name="sec-methods"></a>
+	<div class="info-box">
+		<div class="info-box-title">Methods</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+															<a href="#sec-var-summary">Vars</a> (<a href="#sec-vars">details</a>)
+														<a href="#sec-method-summary">Methods</a> (<span class="disabled">details</span>)
+						
+		</div>
+		<div class="info-box-body">
+			<A NAME='method_detail'></A>
+<a name="methodSimpleOAuthDataStore" id="SimpleOAuthDataStore"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Constructor.png" />
+		<span class="method-title">Constructor SimpleOAuthDataStore</span> (line <span class="line-number"><a href="../__filesource/fsource_OAuth__OAuth.php.html#a709">709</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	<div class="method-signature">
+		<span class="method-result">SimpleOAuthDataStore</span>
+		<span class="method-name">
+			SimpleOAuthDataStore
+		</span>
+					([<span class="var-type"></span>&nbsp;<span class="var-name">$path</span> = <span class="var-default">&quot;oauth.gdbm&quot;</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$path</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="method__destruct" id="__destruct"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Destructor.png" />
+		<span class="method-title">Destructor __destruct</span> (line <span class="line-number"><a href="../__filesource/fsource_OAuth__OAuth.php.html#a713">713</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			__destruct
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodlookup_consumer" id="lookup_consumer"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">lookup_consumer</span> (line <span class="line-number"><a href="../__filesource/fsource_OAuth__OAuth.php.html#a717">717</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			lookup_consumer
+		</span>
+					(<span class="var-type"></span>&nbsp;<span class="var-name">$consumer_key</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$consumer_key</span>			</li>
+				</ul>
+		
+			<hr class="separator" />
+		<div class="notes">Redefinition of:</div>
+		<dl>
+			<dt><a href="../OAuth/OAuthDataStore.html#methodlookup_consumer">OAuthDataStore::lookup_consumer()</a></dt>
+					</dl>
+			
+	</div>
+<a name="methodlookup_nonce" id="lookup_nonce"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">lookup_nonce</span> (line <span class="line-number"><a href="../__filesource/fsource_OAuth__OAuth.php.html#a741">741</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			lookup_nonce
+		</span>
+					(<span class="var-type"></span>&nbsp;<span class="var-name">$consumer</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$token</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$nonce</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$timestamp</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$consumer</span>			</li>
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$token</span>			</li>
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$nonce</span>			</li>
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$timestamp</span>			</li>
+				</ul>
+		
+			<hr class="separator" />
+		<div class="notes">Redefinition of:</div>
+		<dl>
+			<dt><a href="../OAuth/OAuthDataStore.html#methodlookup_nonce">OAuthDataStore::lookup_nonce()</a></dt>
+					</dl>
+			
+	</div>
+<a name="methodlookup_token" id="lookup_token"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">lookup_token</span> (line <span class="line-number"><a href="../__filesource/fsource_OAuth__OAuth.php.html#a729">729</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			lookup_token
+		</span>
+					(<span class="var-type"></span>&nbsp;<span class="var-name">$consumer</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$token_type</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$token</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$consumer</span>			</li>
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$token_type</span>			</li>
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$token</span>			</li>
+				</ul>
+		
+			<hr class="separator" />
+		<div class="notes">Redefinition of:</div>
+		<dl>
+			<dt><a href="../OAuth/OAuthDataStore.html#methodlookup_token">OAuthDataStore::lookup_token()</a></dt>
+					</dl>
+			
+	</div>
+<a name="methodnew_access_token" id="new_access_token"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">new_access_token</span> (line <span class="line-number"><a href="../__filesource/fsource_OAuth__OAuth.php.html#a765">765</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			new_access_token
+		</span>
+					(<span class="var-type"></span>&nbsp;<span class="var-name">$token</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$consumer</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$token</span>			</li>
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$consumer</span>			</li>
+				</ul>
+		
+			<hr class="separator" />
+		<div class="notes">Redefinition of:</div>
+		<dl>
+			<dt><a href="../OAuth/OAuthDataStore.html#methodnew_access_token">OAuthDataStore::new_access_token()</a></dt>
+					</dl>
+			
+	</div>
+<a name="methodnew_request_token" id="new_request_token"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">new_request_token</span> (line <span class="line-number"><a href="../__filesource/fsource_OAuth__OAuth.php.html#a761">761</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			new_request_token
+		</span>
+					(<span class="var-type"></span>&nbsp;<span class="var-name">$consumer</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$consumer</span>			</li>
+				</ul>
+		
+			<hr class="separator" />
+		<div class="notes">Redefinition of:</div>
+		<dl>
+			<dt><a href="../OAuth/OAuthDataStore.html#methodnew_request_token">OAuthDataStore::new_request_token()</a></dt>
+					</dl>
+			
+	</div>
+<a name="methodnew_token" id="new_token"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">new_token</span> (line <span class="line-number"><a href="../__filesource/fsource_OAuth__OAuth.php.html#a750">750</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			new_token
+		</span>
+					(<span class="var-type"></span>&nbsp;<span class="var-name">$consumer</span>, [<span class="var-type"></span>&nbsp;<span class="var-name">$type</span> = <span class="var-default">&quot;request&quot;</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$consumer</span>			</li>
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$type</span>			</li>
+				</ul>
+		
+			
+	</div>
+							<h4>Inherited Methods</h4>
+				<a name='inherited_methods'><!-- --></a>	
+									<!-- =========== Summary =========== -->
+					<p>Inherited From <span class="classname"><a href="../OAuth/OAuthDataStore.html">OAuthDataStore</a></span></p>
+					<blockquote>
+													<img src="../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../OAuth/OAuthDataStore.html#methodlookup_consumer">OAuthDataStore::lookup_consumer()</a></span><br>
+													<img src="../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../OAuth/OAuthDataStore.html#methodlookup_nonce">OAuthDataStore::lookup_nonce()</a></span><br>
+													<img src="../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../OAuth/OAuthDataStore.html#methodlookup_token">OAuthDataStore::lookup_token()</a></span><br>
+													<img src="../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../OAuth/OAuthDataStore.html#methodnew_access_token">OAuthDataStore::new_access_token()</a></span><br>
+													<img src="../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../OAuth/OAuthDataStore.html#methodnew_request_token">OAuthDataStore::new_request_token()</a></span><br>
+											</blockquote>
+										
+		</div>
+	</div>
+
+	
+	<p class="notes" id="credit">
+		Documentation generated on Sun, 04 Oct 2009 15:31:02 -0700 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.4.3</a>
+	</p>
+	</div></body>
+</html>
