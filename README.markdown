@@ -168,6 +168,13 @@ Make sure to update the OAuth credentials in each bundled example:
     var_dump($user->setSmallView($content));
 
 
+## Adding a Contact:
+   
+    $contact_fields[] = array('type' => 'email', 'value' => 'me@domain.com');
+    $contact_fields[] = array('type' => 'name', 'value' => array('givenName'=> 'John', 'familyName' => 'Doe'));
+    $contact = array('fields' => $contact_fields);
+
+    var_dump($user->addContact($contact));
 
 Tests
 =====
