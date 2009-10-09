@@ -1119,7 +1119,7 @@ class YahooUser {
 
 	    $data = array('contactsync' => $contactsync);
 	    $body = json_encode($data);
-	
+
         $request_url = sprintf("http://%s/v1/user/%s/contacts", $YahooConfig["SOCIAL_WS_HOSTNAME"], $this->guid);
 
         $response = $this->client->put($request_url, "application/json", $body);
@@ -1142,7 +1142,7 @@ class YahooUser {
         $request_url = sprintf("http://%s/v1/user/%s/contacts", $YahooConfig["SOCIAL_WS_HOSTNAME"], $this->guid);
 
 		$response = $this->client->post($request_url, "application/json", $body);
-		
+
         return !(YahooUtil::is_response_error($response));
     }
 
@@ -1184,7 +1184,7 @@ class YahooUser {
     function loadProfile() {
         // method renamed, keeping for compatibility.
         YahooLogger::info("loadProfile is deprecated since 1.2: Please use getProfile");
-        
+
         return $this->getProfile();
     }
 
@@ -1546,6 +1546,14 @@ class CookieSessionStore {
  * stored on file system, but can be database or memcache backend.
  */
 class NativeSessionStore {
+
+    function NativeSessionStore() {
+			$id = session_id();
+			if(empty($id)) {
+			  session_start();
+			}
+    }
+
     /**
      * Indicates if the session store has a request token.
      *
