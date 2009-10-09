@@ -764,7 +764,7 @@ class YahooApplication {
     function setSmallView($guid, $content) {
         global $YahooConfig;
 
-    $client = new OAuthClient($this->consumer, NULL);
+        $client = new OAuthClient($this->consumer, NULL);
 
         $request_url = sprintf("http://%s/v1/cache/view/small/%s", $YahooConfig["YAP_WS_HOSTNAME"], urlencode($guid));
         $response = $client->put($request_url, "text/html;charset=utf-8", $content);
@@ -985,11 +985,7 @@ class YahooUser {
 
         $response = $this->client->put($request_url, "application/json", $update_body_json);
 
-        if(YahooUtil::is_response_error($response)) {
-            return NULL;
-        }
-
-        return TRUE;
+        return !(YahooUtil::is_response_error($response));
     }
 
     /**
@@ -1022,11 +1018,7 @@ class YahooUser {
 
         $response = $this->client->delete($request_url);
 
-        if(YahooUtil::is_response_error($response)) {
-            return NULL;
-        }
-
-        return TRUE;
+        return !(YahooUtil::is_response_error($response));
     }
 
     /**
@@ -1084,6 +1076,76 @@ class YahooUser {
         return $contacts;
     }
 
+    function getContact($contact_id)
+    {
+	  	global $YahooConfig;
+
+        if(!$this->sessioned) {
+            YahooLogger::error("Can't get contacts for an unsessioned user");
+            return NULL;
+        }
+
+        $parameters = array();
+        $contacts = $this->get_resource(sprintf("contact/%s", $contact_id), $parameters);
+
+        return $contacts;
+    }
+
+	function getContactSync($rev = 0)
+    {
+        global $YahooConfig;
+
+        if(!$this->sessioned) {
+            YahooLogger::error("Can't get contacts for an unsessioned user");
+            return NULL;
+        }
+
+        $parameters = array('view' => 'sync', 'rev' => $rev);
+        $contactsync = $this->get_resource("contacts",$parameters);
+
+        return $contactsync;
+    }
+
+    function syncContacts($contactsync)
+    {
+        global $YahooConfig;
+
+        if(!$this->sessioned) {
+            YahooLogger::error("Can't get contacts for an unsessioned user");
+            return NULL;
+        }
+
+	    $parameters = array('format' => 'json');
+
+	    $data = array('contactsync' => $contactsync);
+	    $body = json_encode($data);
+	
+        $request_url = sprintf("http://%s/v1/user/%s/contacts", $YahooConfig["SOCIAL_WS_HOSTNAME"], $this->guid);
+
+        $response = $this->client->put($request_url, "application/json", $body);
+
+        return !(YahooUtil::is_response_error($response));
+    }
+
+	function addContact($contact)
+    {
+        global $YahooConfig;
+
+        if(!$this->sessioned) {
+            YahooLogger::error("Can't get contacts for an unsessioned user");
+            return NULL;
+        }
+
+		$data = array('contact' => $contact);
+	    $body = json_encode($data);
+
+        $request_url = sprintf("http://%s/v1/user/%s/contacts", $YahooConfig["SOCIAL_WS_HOSTNAME"], $this->guid);
+
+		$response = $this->client->post($request_url, "application/json", $body);
+		
+        return !(YahooUtil::is_response_error($response));
+    }
+
     /**
      * Sets the small view for the current user.
      *
@@ -1094,26 +1156,21 @@ class YahooUser {
         return $this->session->application->setSmallView($this->guid, $content);
     }
 
-  /**
-   * @private
-   */
-  function get_resource($resource, $parameters=array())
-  {
-    global $YahooConfig;
+    /**
+     * @private
+     */
+    function get_resource($resource, $parameters=array())
+    {
+        global $YahooConfig;
 
-    $request_url = sprintf("http://%s/v1/user/%s/%s",
-    $YahooConfig["SOCIAL_WS_HOSTNAME"], urlencode($this->guid), $resource);
+        $request_url = sprintf("http://%s/v1/user/%s/%s",
+        $YahooConfig["SOCIAL_WS_HOSTNAME"], urlencode($this->guid), $resource);
 
-    $response = $this->client->get($request_url,$parameters);
+        $response = $this->client->get($request_url,$parameters);
+        $data = json_decode($response["responseBody"]);
 
-    if(YahooUtil::is_response_error($response)) {
-      return NULL;
+        return (YahooUtil::is_response_error($response)) ? null : $data;
     }
-
-    $data = json_decode($response["responseBody"]);
-
-    return $data;
-  }
 
   ///////////////////////////////////////////////////////////////////////////
   // Deprecated methods
@@ -1125,12 +1182,11 @@ class YahooUser {
      * @return The extended profile of the current user.
      */
     function loadProfile() {
-
-    // method renamed, keeping for compatibility.
-    YahooLogger::info("loadProfile is deprecated since 1.2: Please use getProfile");
-
-    return $this->getProfile();
-  }
+        // method renamed, keeping for compatibility.
+        YahooLogger::info("loadProfile is deprecated since 1.2: Please use getProfile");
+        
+        return $this->getProfile();
+    }
 
     /**
      * Lists the updates for the current user.
@@ -1141,13 +1197,12 @@ class YahooUser {
      * @param $count The number of updates to request. (default = 10)
      * @return A list of updates for the current user.
      */
-  function listUpdates($start = 0, $count = 10) {
+    function listUpdates($start = 0, $count = 10) {
+       // method renamed, keeping for compatibility.
+       YahooLogger::info("listUpdates is deprecated since 1.2: Please use getUpdates");
 
-    // method renamed, keeping for compatibility.
-    YahooLogger::info("listUpdates is deprecated since 1.2: Please use getUpdates");
-
-    return $this->getUpdates($start, $count);
-  }
+       return $this->getUpdates($start, $count);
+    }
 
     /**
      * Gets the updates for the connections of the current user.
@@ -1157,11 +1212,11 @@ class YahooUser {
      * @return An array of updates for the connections of the current user.
      */
     function listConnectionUpdates($start = 0, $count = 10) {
-    // method renamed, keeping for compatibility.
-    YahooLogger::info("listConnectionUpdates is deprecated since 1.2: Please use getConnectionUpdates");
+        // method renamed, keeping for compatibility.
+        YahooLogger::info("listConnectionUpdates is deprecated since 1.2: Please use getConnectionUpdates");
 
-    return $this->getConnectionUpdates($start, $count);
-  }
+        return $this->getConnectionUpdates($start, $count);
+    }
 
     /**
      * Gets the presence of the user, including the status.
