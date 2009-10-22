@@ -133,9 +133,9 @@ class YahooLogger {
                 }
             }
             else if($GLOBAL_YAHOO_LOGGER_DEBUG_DESTINATION == "LOG") {
-                error_log("DEBUG - $message");
+                YahooLogger::error("DEBUG - $message");
                 if(!is_null($object)) {
-                    error_log("DEBUG OBJECT - " . print_r($object, true));
+                    YahooLogger::error("DEBUG OBJECT - " . print_r($object, true));
                 }
             }
         }
@@ -155,9 +155,9 @@ class YahooLogger {
             }
         }
         else if($GLOBAL_YAHOO_LOGGER_DEBUG_DESTINATION == "LOG") {
-            error_log("INFO - $message");
+            YahooLogger::error("INFO - $message");
             if(!is_null($object)) {
-                error_log("INFO OBJECT - " . print_r($object, true));
+                YahooLogger::error("INFO OBJECT - " . print_r($object, true));
             }
         }
     }
@@ -176,9 +176,9 @@ class YahooLogger {
             }
         }
         else if($GLOBAL_YAHOO_LOGGER_DEBUG_DESTINATION == "LOG") {
-            error_log("ERROR - $message");
+            YahooLogger::error("ERROR - $message");
             if(!is_null($object)) {
-                error_log("ERROR OBJECT - " . print_r($object, true));
+                YahooLogger::error("ERROR OBJECT - " . print_r($object, true));
             }
         }
     }
@@ -196,7 +196,7 @@ class YahooLogger {
     /**
      * Allows callers to configure where debugging output is sent.
      *
-     * @param $destination "LOG" to use error_log, "CONSOLE" to use printf,
+     * @param $destination "LOG" to use YahooLogger::error, "CONSOLE" to use printf,
      *                     "NULL" to disable all logging output.
      * @return boolean True on success, false on failure.
      */
@@ -506,8 +506,8 @@ class YahooSession {
         $consumer->secret = $consumerSecret;
 
     if ($consumer->key != $_POST["yap_consumer_key"]) {
-            error_log("Consumer key from YAP does not match provided key.");
-      // TODO: throw a YahooException
+            YahooLogger::error("Consumer key from YAP does not match provided key.");
+            // TODO: throw a YahooException
             $GLOBAL_YAHOO_SESSION = NULL;
             return;
         }
@@ -516,8 +516,8 @@ class YahooSession {
 
         if (!$signature_ok)
         {
-            error_log("Signature from YAP failed.");
-      // TODO: throw a YahooException
+            YahooLogger::error("Signature from YAP failed.");
+            // TODO: throw a YahooException
             $GLOBAL_YAHOO_SESSION = NULL;
             return;
         }
@@ -529,7 +529,7 @@ class YahooSession {
         $accessToken->owner = $_POST["yap_owner_guid"];
         $accessToken->tokenExpires = -1;
 
-        //YahooLogger::debug("YAP AT: " . $accessToken->key . " ATS: " . $accessToken->secret);
+        YahooLogger::debug("YAP AT: " . $accessToken->key . " ATS: " . $accessToken->secret);
 
         $applicationId = $_POST["yap_appid"];
         $GLOBAL_YAHOO_SESSION = new YahooSession($consumer, $accessToken, $applicationId);
@@ -563,7 +563,7 @@ class YahooSession {
             else {
                 // Don't redirect the user, just inform the caller that
                 // no session is present.
-        // TODO: throw a YahooException
+                // TODO: throw a YahooException
                 $GLOBAL_YAHOO_SESSION = NULL;
             }
         }
@@ -605,7 +605,7 @@ class YahooSession {
                 // though there's no session present.
                 $sessionStore->clearRequestToken();
 
-        // TODO: throw a YahooException
+                // TODO: throw a YahooException
                 $GLOBAL_YAHOO_SESSION = NULL;
             }
 
@@ -643,8 +643,8 @@ class YahooSession {
         }
         else
         {
-            trigger_error("Unknown session type found", E_USER_ERROR);
-      // TODO: throw a YahooException
+            YahooLogger::error("Unknown session type found");
+            // TODO: throw a YahooException
             $GLOBAL_YAHOO_SESSION = NULL;
         }
 
@@ -1078,7 +1078,7 @@ class YahooUser {
 
     function getContact($contact_id)
     {
-	  	global $YahooConfig;
+      global $YahooConfig;
 
         if(!$this->sessioned) {
             YahooLogger::error("Can't get contacts for an unsessioned user");
@@ -1091,7 +1091,7 @@ class YahooUser {
         return $contacts;
     }
 
-	function getContactSync($rev = 0)
+  function getContactSync($rev = 0)
     {
         global $YahooConfig;
 
@@ -1115,10 +1115,10 @@ class YahooUser {
             return NULL;
         }
 
-	    $parameters = array('format' => 'json');
+      $parameters = array('format' => 'json');
 
-	    $data = array('contactsync' => $contactsync);
-	    $body = json_encode($data);
+      $data = array('contactsync' => $contactsync);
+      $body = json_encode($data);
 
         $request_url = sprintf("http://%s/v1/user/%s/contacts", $YahooConfig["SOCIAL_WS_HOSTNAME"], $this->guid);
 
@@ -1127,7 +1127,7 @@ class YahooUser {
         return !(YahooUtil::is_response_error($response));
     }
 
-	function addContact($contact)
+  function addContact($contact)
     {
         global $YahooConfig;
 
@@ -1136,12 +1136,12 @@ class YahooUser {
             return NULL;
         }
 
-		$data = array('contact' => $contact);
-	    $body = json_encode($data);
+    $data = array('contact' => $contact);
+      $body = json_encode($data);
 
         $request_url = sprintf("http://%s/v1/user/%s/contacts", $YahooConfig["SOCIAL_WS_HOSTNAME"], $this->guid);
 
-		$response = $this->client->post($request_url, "application/json", $body);
+    $response = $this->client->post($request_url, "application/json", $body);
 
         return !(YahooUtil::is_response_error($response));
     }
@@ -1548,10 +1548,10 @@ class CookieSessionStore {
 class NativeSessionStore {
 
     function NativeSessionStore() {
-			$id = session_id();
-			if(empty($id)) {
-			  session_start();
-			}
+      $id = session_id();
+      if(empty($id)) {
+        session_start();
+      }
     }
 
     /**
