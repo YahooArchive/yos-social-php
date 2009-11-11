@@ -133,9 +133,9 @@ class YahooLogger {
                 }
             }
             else if($GLOBAL_YAHOO_LOGGER_DEBUG_DESTINATION == "LOG") {
-                YahooLogger::error("DEBUG - $message");
+                error_log("DEBUG - $message");
                 if(!is_null($object)) {
-                    YahooLogger::error("DEBUG OBJECT - " . print_r($object, true));
+                    error_log("DEBUG OBJECT - " . print_r($object, true));
                 }
             }
         }
@@ -155,9 +155,9 @@ class YahooLogger {
             }
         }
         else if($GLOBAL_YAHOO_LOGGER_DEBUG_DESTINATION == "LOG") {
-            YahooLogger::error("INFO - $message");
+            error_log("INFO - $message");
             if(!is_null($object)) {
-                YahooLogger::error("INFO OBJECT - " . print_r($object, true));
+                error_log("INFO OBJECT - " . print_r($object, true));
             }
         }
     }
@@ -176,9 +176,9 @@ class YahooLogger {
             }
         }
         else if($GLOBAL_YAHOO_LOGGER_DEBUG_DESTINATION == "LOG") {
-            YahooLogger::error("ERROR - $message");
+            error_log("ERROR - $message");
             if(!is_null($object)) {
-                YahooLogger::error("ERROR OBJECT - " . print_r($object, true));
+                error_log("ERROR OBJECT - " . print_r($object, true));
             }
         }
     }
