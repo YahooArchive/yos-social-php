@@ -63,14 +63,14 @@ interface YahooSessionStore {
      *
      * @return True if a request token is present, false otherwise.
      */
-    function hasRequestToken(){}
+    function hasRequestToken();
 
     /**
      * Indicates if the session store has an access token.
      *
      * @return True if an access token is present, false otherwise.
      */
-    function hasAccessToken(){}
+    function hasAccessToken();
 
     /**
      * Stores the given request token in the session store.
@@ -79,21 +79,21 @@ interface YahooSessionStore {
      *               the OAuth request token.
      * @return True on success, false otherwise.
      */
-    function storeRequestToken($token){}
+    function storeRequestToken($token);
 
     /**
      * Fetches and returns the request token from the session store.
      *
      * @return The request token.
      */
-    function fetchRequestToken(){}
+    function fetchRequestToken();
 
     /**
      * Clears the request token from the session store.
      *
      * @return True on success, false otherwise.
      */
-    function clearRequestToken(){}
+    function clearRequestToken();
 
     /**
      * Stores the given access token in the session store.
@@ -102,19 +102,19 @@ interface YahooSessionStore {
      *               the OAuth access token.
      * @return True on success, false otherwise.
      */
-    function storeAccessToken($token){}
+    function storeAccessToken($token);
 
     /**
      * Fetches and returns the access token from the session store.
      *
      * @return The access token.
      */
-    function fetchAccessToken(){}
+    function fetchAccessToken();
 
     /**
      * Clears the access token from the session store.
      *
      * @return True on success, false otherwise.
      */
-    function clearAccessToken(){}
+    function clearAccessToken();
 }
