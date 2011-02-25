@@ -1,3 +1,11 @@
+Deprecation Warning
+===================
+
+This Yahoo! Social PHP SDK (supporting PHP 4/5) has been deprecated and will no longer be 
+supported or updated by Yahoo.  All developers requiring PHP SDK support should use our updated
+PHP 5 SDK, available at: https://github.com/yahoo/yos-social-php5.  
+
+
 Yahoo! Social SDK - PHP
 =======================
 
