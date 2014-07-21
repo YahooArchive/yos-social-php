@@ -5,7 +5,7 @@
  *
  *  @package     yos-social-php
  *  @author      Yahoo! Developer Network
- *  @example     http://developer.yahoo.com/social/sdk/php/
+ *  @example     https://developer.yahoo.com/social/sdk/php/
  *
  *  @copyright   Copyright (c) 2009 Yahoo! Inc. All rights reserved.
  *  @license     BSD License (http://www.opensource.org/licenses/bsd-license.php)
@@ -42,9 +42,9 @@
  *  OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
  *  OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  *
- *  Please see the Yahoo! Developer Network forums for support: http://developer.yahoo.net/forum/
+ *  Please see the Yahoo! Developer Network forums for support: https://developer.yahoo.net/forum/
  *
- *  Documentation: http://developer.yahoo.com/social/sdk/php/
+ *  Documentation: https://developer.yahoo.com/social/sdk/php/
  */
 
 // Use OAuthConsumer as a test to see if any other instances of OAuth.php may
@@ -81,7 +81,7 @@ $GLOBAL_YAHOO_LOGGER_DEBUG_DESTINATION = "LOG";
 
 class YahooUtil {
   function current_url() {
-    return sprintf("http://%s%s",$_SERVER["HTTP_HOST"],$_SERVER["REQUEST_URI"]);
+    return sprintf("https://%s%s",$_SERVER["HTTP_HOST"],$_SERVER["REQUEST_URI"]);
   }
 
     function verify_signature($consumer, $token=NULL, $oauth_signature) {
@@ -766,7 +766,7 @@ class YahooApplication {
 
         $client = new OAuthClient($this->consumer, NULL);
 
-        $request_url = sprintf("http://%s/v1/cache/view/small/%s", $YahooConfig["YAP_WS_HOSTNAME"], urlencode($guid));
+        $request_url = sprintf("https://%s/v1/cache/view/small/%s", $YahooConfig["YAP_WS_HOSTNAME"], urlencode($guid));
         $response = $client->put($request_url, "text/html;charset=utf-8", $content);
 
         return !(YahooUtil::is_response_error($response));
@@ -785,8 +785,8 @@ class YahooApplication {
 
         $client = new OAuthClient($this->consumer, $this->token);
 
-        $request_url = sprintf("http://%s/v1/yql",$YahooConfig["QUERY_WS_HOSTNAME"]);
-        $params = array('q' => $yql, 'format' => 'json', 'env' => 'http://datatables.org/alltables.env');
+        $request_url = sprintf("https://%s/v1/yql",$YahooConfig["QUERY_WS_HOSTNAME"]);
+        $params = array('q' => $yql, 'format' => 'json', 'env' => 'https://datatables.org/alltables.env');
 
         if(!is_null($env)) {
           $params['env'] = $env;
@@ -848,7 +848,7 @@ class YahooUser {
     function getStatus() {
         global $YahooConfig;
 
-        $request_url = sprintf("http://%s/v1/user/%s/profile/status",
+        $request_url = sprintf("https://%s/v1/user/%s/profile/status",
         $YahooConfig["SOCIAL_WS_HOSTNAME"],urlencode($this->guid));
 
         $response = $this->client->get($request_url);
@@ -892,7 +892,7 @@ class YahooUser {
         $status = array("status" => $message);
         $status_json = json_encode($status);
 
-        $request_url = sprintf("http://%s/v1/user/%s/profile/status", $YahooConfig["SOCIAL_WS_HOSTNAME"], $this->guid);
+        $request_url = sprintf("https://%s/v1/user/%s/profile/status", $YahooConfig["SOCIAL_WS_HOSTNAME"], $this->guid);
 
         $response = $this->client->put($request_url, "application/json", $status_json);
 
@@ -981,7 +981,7 @@ class YahooUser {
         $update_body = array("updates" => array($update));
         $update_body_json = json_encode($update_body);
 
-        $request_url = sprintf("http://%s/v1/user/%s/updates/%s/%s", $YahooConfig["UPDATES_WS_HOSTNAME"], $this->guid, $source, urlencode($suid));
+        $request_url = sprintf("https://%s/v1/user/%s/updates/%s/%s", $YahooConfig["UPDATES_WS_HOSTNAME"], $this->guid, $source, urlencode($suid));
 
         $response = $this->client->put($request_url, "application/json", $update_body_json);
 
@@ -1014,7 +1014,7 @@ class YahooUser {
 
         $source = sprintf("APP.%s", $appid);
 
-        $request_url = sprintf("http://%s/v1/user/%s/updates/%s/%s", $YahooConfig["UPDATES_WS_HOSTNAME"], $this->guid, $source, urlencode($suid));
+        $request_url = sprintf("https://%s/v1/user/%s/updates/%s/%s", $YahooConfig["UPDATES_WS_HOSTNAME"], $this->guid, $source, urlencode($suid));
 
         $response = $this->client->delete($request_url);
 
@@ -1120,7 +1120,7 @@ class YahooUser {
       $data = array('contactsync' => $contactsync);
       $body = json_encode($data);
 
-        $request_url = sprintf("http://%s/v1/user/%s/contacts", $YahooConfig["SOCIAL_WS_HOSTNAME"], $this->guid);
+        $request_url = sprintf("https://%s/v1/user/%s/contacts", $YahooConfig["SOCIAL_WS_HOSTNAME"], $this->guid);
 
         $response = $this->client->put($request_url, "application/json", $body);
 
@@ -1139,7 +1139,7 @@ class YahooUser {
     $data = array('contact' => $contact);
       $body = json_encode($data);
 
-        $request_url = sprintf("http://%s/v1/user/%s/contacts", $YahooConfig["SOCIAL_WS_HOSTNAME"], $this->guid);
+        $request_url = sprintf("https://%s/v1/user/%s/contacts", $YahooConfig["SOCIAL_WS_HOSTNAME"], $this->guid);
 
     $response = $this->client->post($request_url, "application/json", $body);
 
@@ -1163,7 +1163,7 @@ class YahooUser {
     {
         global $YahooConfig;
 
-        $request_url = sprintf("http://%s/v1/user/%s/%s",
+        $request_url = sprintf("https://%s/v1/user/%s/%s",
         $YahooConfig["SOCIAL_WS_HOSTNAME"], urlencode($this->guid), $resource);
 
         $response = $this->client->get($request_url,$parameters);
@@ -1229,7 +1229,7 @@ class YahooUser {
 
         YahooLogger::info("getPresence is deprecated since 1.2: Please use getStatus.");
 
-        $request_url = sprintf("http://%s/v1/user/%s/presence/presence",
+        $request_url = sprintf("https://%s/v1/user/%s/presence/presence",
         $YahooConfig["PRESENCE_WS_HOSTNAME"],urlencode($this->guid));
 
         $response = $this->client->get($request_url);
@@ -1273,7 +1273,7 @@ class YahooUser {
         $presence = array("status" => $status);
         $presence_json = json_encode($presence);
 
-        $request_url = sprintf("http://%s/v1/user/%s/presence/presence", $YahooConfig["PRESENCE_WS_HOSTNAME"], $this->guid);
+        $request_url = sprintf("https://%s/v1/user/%s/presence/presence", $YahooConfig["PRESENCE_WS_HOSTNAME"], $this->guid);
 
         $response = $this->client->put($request_url, "application/json", $presence_json);
 
